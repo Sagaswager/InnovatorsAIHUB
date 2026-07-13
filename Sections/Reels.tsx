@@ -169,7 +169,7 @@ const Reels: React.FC<ReelsProps> = ({ isDarkMode }) => {
   };
 
   return (
-    <section className="py-12 md:py-16 relative overflow-hidden flex flex-col items-center bg-zinc-950">
+    <section className="py-12 md:py-16 relative overflow-hidden flex flex-col items-center bg-transparent">
       {/* Dynamic Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[140px] pointer-events-none bg-blue-600/10 opacity-50" />
 
@@ -238,9 +238,7 @@ const Reels: React.FC<ReelsProps> = ({ isDarkMode }) => {
           <ChevronRight size={20} />
         </button>
 
-        {/* Cinematic Edge Faders (inside the scrolling box boundaries) */}
-        <div className="absolute inset-y-0 left-16 md:left-28 w-16 md:w-32 bg-gradient-to-r from-zinc-950 to-transparent pointer-events-none z-30" />
-        <div className="absolute inset-y-0 right-16 md:right-28 w-16 md:w-32 bg-gradient-to-l from-zinc-950 to-transparent pointer-events-none z-30" />
+        {/* Cinematic Edge Faders removed */}
       </div>
 
       <motion.div 

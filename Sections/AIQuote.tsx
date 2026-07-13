@@ -71,7 +71,7 @@ const AIQuote: React.FC<AIQuoteProps> = ({ isDarkMode }) => {
   ];
 
   return (
-    <section className="pt-0 pb-8 md:pb-16 px-0 relative overflow-hidden flex flex-col items-center justify-center transition-colors duration-700 bg-zinc-950">
+    <section className="pt-0 pb-8 md:pb-16 px-0 relative overflow-hidden flex flex-col items-center justify-center transition-colors duration-700 bg-transparent">
       <div className="max-w-[1400px] mx-auto text-center relative z-20 w-full flex flex-col items-center px-6">
         {/* Quote Header Text */}
         <motion.div
@@ -106,7 +106,7 @@ const AIQuote: React.FC<AIQuoteProps> = ({ isDarkMode }) => {
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              className="text-6xl md:text-8xl lg:text-[11rem] font-bold tracking-tighter text-white leading-none"
+              className="text-6xl md:text-8xl lg:text-[11rem] font-bold tracking-tighter leading-none text-white pb-4"
             >
               But are you?
             </motion.h3>

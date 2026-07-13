@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, ExternalLink, Calendar, ShoppingCart } from 'lucide-react';
+import PillButton from './PillButton';
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -73,45 +74,42 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10 text-[11px] font-bold tracking-[0.3em] uppercase">
+          <nav className="hidden lg:flex items-center gap-4 text-[11px] font-bold tracking-[0.3em] uppercase">
             {navItems.map((item) => (
-              <button 
+              <PillButton 
                 key={item.page}
                 onClick={() => handleLinkClick(item.page)}
-                className={`relative transition-all duration-300 outline-none group ${
-                  currentPage === item.page ? 'text-white font-bold' : 'text-white/60 hover:text-white'
+                className={`!px-6 !py-3 !text-sm ${
+                  currentPage === item.page ? 'opacity-100 border-white/50 drop-shadow-md' : 'opacity-95 hover:opacity-100'
                 }`}
               >
                 {item.label}
-                {currentPage === item.page && (
-                  <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-4 h-[1px] bg-white rounded-full" />
-                )}
-              </button>
+              </PillButton>
             ))}
-            <a 
+            <PillButton 
+              as="a"
               id="header-linkedin-agent-link"
               href="https://innovatorslinai.duckdns.org/dashboard.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative transition-all duration-300 outline-none group text-white/60 hover:text-white rounded-lg py-1 flex items-center gap-1.5"
+              className="!px-6 !py-3 !text-sm opacity-95 hover:opacity-100"
             >
               Linkedin AI Agent
-            </a>
+            </PillButton>
           </nav>
 
           {/* Header Actions (Right) */}
           <div className="flex items-center gap-4 md:gap-6">
             {/* Book Demo Call (Desktop) */}
-            <motion.a 
+            <PillButton 
+              as="a"
               href="https://calendar.app.google/D4VcVM3GVSh4PAia6"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(37, 99, 235, 0.4)" }}
-              whileTap={{ scale: 0.98 }}
-              className="hidden sm:inline-block px-4 py-2.5 md:px-5 md:py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold uppercase tracking-[0.2em] text-[8px] md:text-[9px] rounded-xl transition-all shadow-md shadow-blue-600/20 text-center"
+              className="hidden sm:inline-flex !px-5 !py-3"
             >
               BOOK DEMO CALL
-            </motion.a>
+            </PillButton>
 
             {/* Shopping Cart Button */}
             {selectedAgents.length > 0 && (

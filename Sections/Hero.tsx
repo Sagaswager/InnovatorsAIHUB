@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import PillButton from './PillButton';
 
 interface HeroProps {
   isDarkMode: boolean;
@@ -128,19 +129,19 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, navigateTo }) => {
         transition={{ delay: 1.6, duration: 1 }}
         className="relative z-10 mt-10 md:mt-14 flex flex-col items-center gap-5 w-full max-w-[1400px]"
       >
-        <motion.a 
+        <PillButton 
+          as="a"
           href="https://calendar.app.google/D4VcVM3GVSh4PAia6"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.98 }}
-          className="group px-14 py-6 rounded-full font-bold uppercase tracking-[0.3em] text-[10px] flex items-center gap-5 transition-all shadow-2xl bg-white text-zinc-950 shadow-white/5 inline-flex"
+          className="!px-12 !py-6"
         >
-          Book Demo Call <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-        </motion.a>
+          Book Demo Call <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform ml-2" />
+        </PillButton>
 
         {/* Social Icons just below the button */}
-        <div className="flex items-center gap-6 mt-3">
+        <div className="flex items-center gap-4 mt-3">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70 mr-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Join</span>
           <a 
             href="https://www.instagram.com/innovatorsaihub" 
             target="_blank" 

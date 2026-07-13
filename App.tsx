@@ -112,23 +112,32 @@ const App: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               <Hero isDarkMode={isDarkMode} navigateTo={navigateTo} />
-              <AgentTeams 
-                isDarkMode={isDarkMode} 
-                selectedAgents={selectedAgents} 
-                toggleAgent={toggleAgent} 
-                navigateTo={navigateTo} 
-              />
-              <AIQuote isDarkMode={isDarkMode} />
-              <Reels isDarkMode={isDarkMode} />
-              <CustomAgentBanner />
-              <Services 
-                isDarkMode={isDarkMode} 
-                selectedAgents={selectedAgents} 
-                customDescriptions={customDescriptions}
-                toggleAgent={toggleAgent} 
-                navigateTo={navigateTo} 
-              />
-              <Contact isDarkMode={isDarkMode} isFullPage={false} />
+              
+              <div 
+                className="relative bg-[length:100%_auto] bg-top bg-no-repeat bg-zinc-950"
+                style={{ backgroundImage: "url('/background.jpg')" }}
+              >
+                <div className="absolute inset-0 bg-zinc-950/20 pointer-events-none" />
+                <div className="relative z-10">
+                  <AgentTeams 
+                    isDarkMode={isDarkMode} 
+                    selectedAgents={selectedAgents} 
+                    toggleAgent={toggleAgent} 
+                    navigateTo={navigateTo} 
+                  />
+                  <AIQuote isDarkMode={isDarkMode} />
+                  <Reels isDarkMode={isDarkMode} />
+                  <CustomAgentBanner />
+                  <Services 
+                    isDarkMode={isDarkMode} 
+                    selectedAgents={selectedAgents} 
+                    customDescriptions={customDescriptions}
+                    toggleAgent={toggleAgent} 
+                    navigateTo={navigateTo} 
+                  />
+                  <Contact isDarkMode={isDarkMode} isFullPage={false} />
+                </div>
+              </div>
             </motion.div>
           )}
 

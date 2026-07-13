@@ -10,7 +10,7 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ isDarkMode, isFullPage = false }) => {
 
   return (
-    <section className={`${isFullPage ? 'min-h-screen pt-48 pb-24' : 'py-12'} px-6 relative overflow-hidden bg-zinc-950`}>
+    <section className={`${isFullPage ? 'min-h-screen pt-48 pb-24' : 'py-12'} px-6 relative overflow-hidden bg-transparent`}>
       <div className="max-w-[900px] mx-auto flex flex-col justify-start items-start">
         
         <div className="flex flex-col w-full z-10">

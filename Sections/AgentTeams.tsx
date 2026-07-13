@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, MessageSquare, PhoneCall, Users, ShoppingCart, Check } from 'lucide-react';
+import PillButton from './PillButton';
 
 interface Agent {
   id: string;
@@ -58,7 +59,7 @@ export const agentsData: Agent[] = [
 
 const AgentTeams: React.FC<AgentTeamsProps> = ({ selectedAgents, toggleAgent, navigateTo }) => {
   return (
-    <section className="py-20 px-6 max-w-[1400px] mx-auto relative overflow-visible bg-zinc-950">
+    <section className="py-20 px-6 max-w-[1400px] mx-auto relative overflow-visible bg-transparent">
       {/* Title */}
       <div className="flex flex-col items-center md:items-start text-center md:text-left mb-12">
         <motion.span
@@ -115,13 +116,9 @@ const AgentTeams: React.FC<AgentTeamsProps> = ({ selectedAgents, toggleAgent, na
                   {agent.price}
                 </p>
                 {/* CTA Button */}
-                <button
+                <PillButton
                   onClick={() => toggleAgent(agent.id)}
-                  className={`w-full py-3 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 ${
-                    isAdded
-                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
-                      : 'bg-white hover:bg-zinc-100 text-zinc-950 shadow-md shadow-white/5'
-                  }`}
+                  className="w-full !py-3"
                 >
                   {isAdded ? (
                     <>
@@ -132,7 +129,7 @@ const AgentTeams: React.FC<AgentTeamsProps> = ({ selectedAgents, toggleAgent, na
                       <ShoppingCart className="w-4 h-4" /> Add to Hire
                     </>
                   )}
-                </button>
+                </PillButton>
               </div>
             </motion.div>
           );
@@ -145,12 +142,12 @@ const AgentTeams: React.FC<AgentTeamsProps> = ({ selectedAgents, toggleAgent, na
           animate={{ opacity: 1, y: 0 }}
           className="mt-12 flex justify-center"
         >
-          <button
+          <PillButton
             onClick={() => navigateTo?.('services')}
-            className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold uppercase tracking-widest text-[10px] rounded-full transition-all shadow-lg shadow-blue-600/20 flex items-center gap-3"
+            className="!px-8 !py-4"
           >
-            Review and Hire Selected ({selectedAgents.length}) <ShoppingCart className="w-4 h-4" />
-          </button>
+            Review and Hire Selected ({selectedAgents.length}) <ShoppingCart className="w-4 h-4 ml-2" />
+          </PillButton>
         </motion.div>
       )}
     </section>

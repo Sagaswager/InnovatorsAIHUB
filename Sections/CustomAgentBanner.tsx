@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import PillButton from './PillButton';
 
 const CustomAgentBanner: React.FC = () => {
   return (
-    <section className="w-full px-4 md:px-6 py-12 md:py-16 bg-zinc-950 flex justify-center">
+    <section className="w-full px-4 md:px-6 py-12 md:py-16 bg-transparent flex justify-center">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -35,15 +36,16 @@ const CustomAgentBanner: React.FC = () => {
 
         {/* Button */}
         <div className="relative z-10 flex-shrink-0">
-          <a
+          <PillButton
+            as="a"
             href="https://calendar.app.google/D4VcVM3GVSh4PAia6"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-white text-indigo-600 px-6 py-3.5 md:px-8 md:py-4 rounded-xl md:rounded-xl font-bold text-sm md:text-base transition-all hover:bg-zinc-50 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] active:scale-95 shadow-lg"
+            className="!px-6 !py-3.5 md:!px-8 md:!py-4"
           >
             Book Free Consultation
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform ml-2" />
+          </PillButton>
         </div>
       </motion.div>
     </section>
