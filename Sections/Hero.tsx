@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, navigateTo }) => {
           className="w-full h-full object-contain md:object-cover opacity-95 scale-100 transition-opacity duration-1000"
         />
         {/* Soft overlay gradient to ensure high readability of text while keeping background fully visible */}
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/30 to-zinc-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/30 via-transparent to-zinc-950/60" />
       </div>
 
       <motion.div 
@@ -134,9 +134,9 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, navigateTo }) => {
           href="https://calendar.app.google/D4VcVM3GVSh4PAia6"
           target="_blank"
           rel="noopener noreferrer"
-          className="!px-12 !py-6"
+          className="!px-16 !py-8 !text-2xl md:!text-3xl"
         >
-          Book Demo Call <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform ml-2" />
+          Book Demo Call <ArrowRight size={28} className="group-hover:translate-x-1 transition-transform ml-3" />
         </PillButton>
 
         {/* Social Icons just below the button */}
