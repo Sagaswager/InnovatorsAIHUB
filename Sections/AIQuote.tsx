@@ -85,7 +85,7 @@ const AIQuote: React.FC<AIQuoteProps> = ({ isDarkMode }) => {
             style={arialFont}
             className="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-tight mb-4 text-white/80"
           >
-            &quot;AI is <span className="bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,transparent_40%),linear-gradient(to_right,#e0ffff,#00f2fe,#d500f9,#ff1744,#ff9100,#ffea00)] bg-clip-text text-transparent drop-shadow-md">changing</span> so fast in 2026&quot;
+            &quot;AI is <span className="bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,transparent_30%),linear-gradient(to_top,rgba(255,255,255,0.9)_0%,transparent_30%),linear-gradient(to_right,#e0ffff,#00f2fe,#ff6b6b,#ff9100,#ffffff)] bg-clip-text text-transparent drop-shadow-md">changing</span> so fast in 2026&quot;
           </h2>
 
           <motion.div
