@@ -58,7 +58,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handlePopState = () => {
-      const path = window.location.pathname.replace('/', '') || 'home';
+      const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'home';
       if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact') {
         setCurrentPage(path as any);
       }

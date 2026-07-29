@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, navigateTo }) => {
         {/* Semantic H1 for search engines */}
         <h1 className="sr-only">Grow Brand with AI - Innovators AI HUB</h1>
 
-        <div className="flex items-center justify-center gap-6 md:gap-12 lg:gap-16">
+        <div className="flex items-center justify-center gap-6 md:gap-12 lg:gap-16" aria-hidden="true">
           <div className="flex flex-col items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
