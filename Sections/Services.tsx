@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { trackEvent } from '../analytics';
 import { 
   Video, 
   Code, 
@@ -191,7 +192,10 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
                       </div>
                     </div>
                     <button
-                      onClick={() => toggleAgent?.(agent.id)}
+                      onClick={() => {
+                        toggleAgent?.(agent.id);
+                        trackEvent('agent_selected', { agent_id: agent.id, agent_name: agent.name, action: 'removed', source: 'services_cart' });
+                      }}
                       className="text-[10px] font-bold text-red-500/70 hover:text-red-400 transition-colors uppercase tracking-wider px-3 py-1.5 hover:bg-red-500/5 rounded-xl"
                     >
                       Remove
@@ -206,12 +210,14 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold uppercase tracking-widest text-[9px] rounded-2xl transition-all shadow-lg shadow-emerald-600/10 flex items-center justify-center gap-3"
+                  onClick={() => trackEvent('checkout_initiated', { checkout_method: 'whatsapp', selected_agents_count: selectedList.length, agents_list: selectedList.map(a => a.name).join(', ') })}
                 >
                   Checkout via WhatsApp <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href={getEmailLink()}
                   className="flex-1 py-3.5 bg-white hover:bg-zinc-100 text-zinc-950 font-bold uppercase tracking-widest text-[9px] rounded-2xl transition-all shadow-lg flex items-center justify-center gap-3"
+                  onClick={() => trackEvent('checkout_initiated', { checkout_method: 'email', selected_agents_count: selectedList.length, agents_list: selectedList.map(a => a.name).join(', ') })}
                 >
                   Checkout via Email <ArrowRight className="w-4 h-4" />
                 </a>
@@ -246,7 +252,10 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
                   <div className="text-left">
                     <p className="text-xs font-semibold text-white/70 mb-3">{agent.price}</p>
                     <button
-                      onClick={() => toggleAgent?.(agent.id)}
+                      onClick={() => {
+                        toggleAgent?.(agent.id);
+                        trackEvent('agent_selected', { agent_id: agent.id, agent_name: agent.name, action: isAdded ? 'removed' : 'added', source: 'services_catalog' });
+                      }}
                       className={`w-full py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all ${
                         isAdded
                           ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
@@ -271,6 +280,47 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
         </div>
       )}
 
+      {/* FAQ Section for AEO/GEO Optimization */}
+      <div className="mt-24 border-t border-white/5 pt-16 max-w-5xl mx-auto">
+        <div className="text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight font-sora">
+            Frequently Asked Questions
+          </h3>
+          <p className="text-xs font-light text-zinc-500 mt-2">
+            Answers to common questions about hiring AI Agent teams.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <div className="p-6 bg-zinc-900/20 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
+            <h4 className="text-sm font-bold text-white mb-2">What is an AI Agent Team?</h4>
+            <p className="text-xs font-light text-zinc-400 leading-relaxed">
+              An AI Agent Team consists of autonomous, specialized AI models (like WhatsApp, voice, or LinkedIn agents) integrated together. They collaborate to automate complex business operations like customer support and lead qualification without human intervention.
+            </p>
+          </div>
+
+          <div className="p-6 bg-zinc-900/20 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
+            <h4 className="text-sm font-bold text-white mb-2">What are the benefits of hiring AI Agents vs. human employees?</h4>
+            <p className="text-xs font-light text-zinc-400 leading-relaxed">
+              AI Agents operate 24/7 with zero downtime, handle unlimited concurrent queries, and eliminate human errors. Implementing autonomous workflows helps businesses streamline client communication, accelerate response times, and reduce overhead.
+            </p>
+          </div>
+
+          <div className="p-6 bg-zinc-900/20 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
+            <h4 className="text-sm font-bold text-white mb-2">How do AI Agents connect to my CRM?</h4>
+            <p className="text-xs font-light text-zinc-400 leading-relaxed">
+              Our AI Agents support native integration with major CRMs (HubSpot, Salesforce, Zoho) and communication channels (WhatsApp API, Twilio, Slack) through custom API workflows, allowing them to log leads and update records in real time.
+            </p>
+          </div>
+
+          <div className="p-6 bg-zinc-900/20 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
+            <h4 className="text-sm font-bold text-white mb-2">Are custom workflows supported?</h4>
+            <p className="text-xs font-light text-zinc-400 leading-relaxed">
+              Yes, we design and engineer custom multi-agent workflows tailored to your unique company operations. We audit your existing processes and build bespoke agents to handle specific, complex pipelines.
+            </p>
+          </div>
+        </div>
+      </div>
 
     </section>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackEvent } from '../analytics';
 import { motion } from 'framer-motion';
 
 interface AIQuoteProps {
@@ -83,10 +84,13 @@ const AIQuote: React.FC<AIQuoteProps> = ({ isDarkMode }) => {
         >
           <h2 
             style={arialFont}
-            className="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-tight mb-4 text-white/80"
+            className="text-xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-tight mb-2 text-white/80"
           >
             &quot;AI is <span className="bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,transparent_30%),linear-gradient(to_top,rgba(255,255,255,0.9)_0%,transparent_30%),linear-gradient(to_right,#e0ffff,#00f2fe,#ff6b6b,#ff9100,#ffffff)] bg-clip-text text-transparent drop-shadow-md">changing</span> so fast in 2026&quot;
           </h2>
+          <p className="text-xs md:text-sm text-zinc-400 max-w-xl mx-auto mb-6 leading-relaxed">
+            Autonomous multi-agent workflows designed to streamline operations, customer engagement, and outreach.
+          </p>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -130,6 +134,9 @@ const AIQuote: React.FC<AIQuoteProps> = ({ isDarkMode }) => {
             <img 
               src="/ai-logos.png" 
               alt="AI Product Logos" 
+              width={1400}
+              height={200}
+              decoding="async"
               className="w-full h-auto object-cover opacity-85 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
             />
           </div>
@@ -137,6 +144,9 @@ const AIQuote: React.FC<AIQuoteProps> = ({ isDarkMode }) => {
             <img 
               src="/ai-logos.png" 
               alt="AI Product Logos" 
+              width={1400}
+              height={200}
+              decoding="async"
               className="w-full h-auto object-cover opacity-85 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
             />
           </div>

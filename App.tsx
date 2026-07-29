@@ -48,11 +48,93 @@ const App: React.FC = () => {
 
   const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact') => {
     setCurrentPage(page);
+    const path = page === 'home' ? '/' : `/${page}`;
+    window.history.pushState({ page }, '', path);
     // Use setTimeout to ensure DOM is updated before scrolling
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 50);
   };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'home';
+      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact') {
+        setCurrentPage(path as any);
+      }
+    };
+
+    // Run once on initial load to set page state based on the pathname
+    handlePopState();
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  useEffect(() => {
+    let title = 'Innovators AI HUB | AI-Agentic Systems & Brand Films';
+    let description = "Hire autonomous AI agent teams to automate your company's workflows, WhatsApp customer engagement, voice calling, and outbound outreach. Elevate your brand with Innovators AI HUB.";
+
+    switch (currentPage) {
+      case 'home':
+        title = 'Innovators AI HUB | AI-Agentic Systems & Brand Films';
+        description = "Hire autonomous AI agent teams to automate your company's workflows, WhatsApp customer engagement, voice calling, and outbound outreach. Elevate your brand with Innovators AI HUB.";
+        break;
+      case 'portfolio':
+        title = 'Our Portfolio | Innovators AI HUB';
+        description = 'Explore our portfolio of AI brand films, autonomous agent setups, and advanced automation workflows built by Innovators AI HUB.';
+        break;
+      case 'services':
+        title = 'Hire AI Agents & Teams | Services | Innovators AI HUB';
+        description = 'Browse and hire from our pre-trained AI agent catalog: WhatsApp AI bots, outbound voice calling agents, LinkedIn outreach agents, and custom teams.';
+        break;
+      case 'contact':
+        title = 'Contact Us | Innovators AI HUB';
+        description = 'Get in touch with Innovators AI HUB to hire custom AI agents or build multi-agent workflows tailored to your business operations.';
+        break;
+    }
+
+    document.title = title;
+    const pageUrl = `https://innovatorsaihub.com${currentPage === 'home' ? '/' : `/${currentPage}`}`;
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', description);
+    }
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute('href', pageUrl);
+    }
+
+    // Dynamic Open Graph Updates
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', pageUrl);
+    }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', title);
+    }
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute('content', description);
+    }
+
+    // Dynamic Twitter Card Updates
+    const twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.setAttribute('content', pageUrl);
+    }
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) {
+      twitterTitle.setAttribute('content', title);
+    }
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDesc) {
+      twitterDesc.setAttribute('content', description);
+    }
+  }, [currentPage]);
 
   useEffect(() => {
     if (isDarkMode) {
