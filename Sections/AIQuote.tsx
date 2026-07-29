@@ -89,7 +89,7 @@ const AIQuote: React.FC<AIQuoteProps> = ({ isDarkMode }) => {
             &quot;AI is <span className="bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,transparent_30%),linear-gradient(to_top,rgba(255,255,255,0.9)_0%,transparent_30%),linear-gradient(to_right,#e0ffff,#00f2fe,#ff6b6b,#ff9100,#ffffff)] bg-clip-text text-transparent drop-shadow-md">changing</span> so fast in 2026&quot;
           </h2>
           <p className="text-xs md:text-sm text-zinc-400 max-w-xl mx-auto mb-6 leading-relaxed">
-            According to Gartner (2026), over 75% of operations will integrate conversational AI agents, helping companies reduce human resource overhead by up to 40%.
+            Autonomous multi-agent workflows designed to streamline operations, customer engagement, and outreach.
           </p>
 
           <motion.div

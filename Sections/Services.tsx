@@ -302,7 +302,7 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
           <div className="p-6 bg-zinc-900/20 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
             <h4 className="text-sm font-bold text-white mb-2">What are the benefits of hiring AI Agents vs. human employees?</h4>
             <p className="text-xs font-light text-zinc-400 leading-relaxed">
-              AI Agents operate 24/7 with zero downtime, handle unlimited concurrent queries, and eliminate human errors. According to industry studies, businesses implementing autonomous agent workflows reduce operational costs by up to 40% while speeding up response times by over 90%.
+              AI Agents operate 24/7 with zero downtime, handle unlimited concurrent queries, and eliminate human errors. Implementing autonomous workflows helps businesses streamline client communication, accelerate response times, and reduce overhead.
             </p>
           </div>
 

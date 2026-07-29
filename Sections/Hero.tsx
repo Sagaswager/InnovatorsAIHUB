@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, navigateTo }) => {
           alt="Hero Background" 
           className="w-full h-full object-contain md:object-cover opacity-95 scale-100 transition-opacity duration-1000"
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         {/* Soft overlay gradient to ensure high readability of text while keeping background fully visible */}
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/30 via-transparent to-zinc-950/60" />

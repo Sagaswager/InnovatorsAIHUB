@@ -48,7 +48,8 @@ const App: React.FC = () => {
 
   const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact') => {
     setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : `#${page}`;
+    const path = page === 'home' ? '/' : `/${page}`;
+    window.history.pushState({ page }, '', path);
     // Use setTimeout to ensure DOM is updated before scrolling
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -56,18 +57,18 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '') || 'home';
-      if (hash === 'home' || hash === 'portfolio' || hash === 'services' || hash === 'contact') {
-        setCurrentPage(hash as any);
+    const handlePopState = () => {
+      const path = window.location.pathname.replace('/', '') || 'home';
+      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact') {
+        setCurrentPage(path as any);
       }
     };
 
-    // Run once on initial load to set page state based on the hash
-    handleHashChange();
+    // Run once on initial load to set page state based on the pathname
+    handlePopState();
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   useEffect(() => {
@@ -94,10 +95,44 @@ const App: React.FC = () => {
     }
 
     document.title = title;
+    const pageUrl = `https://innovatorsaihub.com${currentPage === 'home' ? '/' : `/${currentPage}`}`;
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
+    }
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute('href', pageUrl);
+    }
+
+    // Dynamic Open Graph Updates
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', pageUrl);
+    }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', title);
+    }
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute('content', description);
+    }
+
+    // Dynamic Twitter Card Updates
+    const twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.setAttribute('content', pageUrl);
+    }
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) {
+      twitterTitle.setAttribute('content', title);
+    }
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDesc) {
+      twitterDesc.setAttribute('content', description);
     }
   }, [currentPage]);
 
