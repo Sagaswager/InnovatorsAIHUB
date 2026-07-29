@@ -48,11 +48,58 @@ const App: React.FC = () => {
 
   const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact') => {
     setCurrentPage(page);
+    window.location.hash = page === 'home' ? '' : `#${page}`;
     // Use setTimeout to ensure DOM is updated before scrolling
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 50);
   };
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      if (hash === 'home' || hash === 'portfolio' || hash === 'services' || hash === 'contact') {
+        setCurrentPage(hash as any);
+      }
+    };
+
+    // Run once on initial load to set page state based on the hash
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    let title = 'Innovators AI HUB | AI-Agentic Systems & Brand Films';
+    let description = "Hire autonomous AI agent teams to automate your company's workflows, WhatsApp customer engagement, voice calling, and outbound outreach. Elevate your brand with Innovators AI HUB.";
+
+    switch (currentPage) {
+      case 'home':
+        title = 'Innovators AI HUB | AI-Agentic Systems & Brand Films';
+        description = "Hire autonomous AI agent teams to automate your company's workflows, WhatsApp customer engagement, voice calling, and outbound outreach. Elevate your brand with Innovators AI HUB.";
+        break;
+      case 'portfolio':
+        title = 'Our Portfolio | Innovators AI HUB';
+        description = 'Explore our portfolio of AI brand films, autonomous agent setups, and advanced automation workflows built by Innovators AI HUB.';
+        break;
+      case 'services':
+        title = 'Hire AI Agents & Teams | Services | Innovators AI HUB';
+        description = 'Browse and hire from our pre-trained AI agent catalog: WhatsApp AI bots, outbound voice calling agents, LinkedIn outreach agents, and custom teams.';
+        break;
+      case 'contact':
+        title = 'Contact Us | Innovators AI HUB';
+        description = 'Get in touch with Innovators AI HUB to hire custom AI agents or build multi-agent workflows tailored to your business operations.';
+        break;
+    }
+
+    document.title = title;
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', description);
+    }
+  }, [currentPage]);
 
   useEffect(() => {
     if (isDarkMode) {
