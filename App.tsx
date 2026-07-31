@@ -73,13 +73,14 @@ const App: React.FC = () => {
 
   useEffect(() => {
     let title = 'Innovators AI HUB | AI-Agentic Systems & Brand Films';
-    let description = "Hire autonomous AI agent teams to automate your company's workflows, WhatsApp customer engagement, voice calling, and outbound outreach. Elevate your brand with Innovators AI HUB.";
+    let description = "Hire autonomous AI agent teams to automate workflows, WhatsApp support, voice calls & outbound outreach. Elevate your business with Innovators AI HUB.";
 
     switch (currentPage) {
       case 'home':
         title = 'Innovators AI HUB | AI-Agentic Systems & Brand Films';
-        description = "Hire autonomous AI agent teams to automate your company's workflows, WhatsApp customer engagement, voice calling, and outbound outreach. Elevate your brand with Innovators AI HUB.";
+        description = "Hire autonomous AI agent teams to automate workflows, WhatsApp support, voice calls & outbound outreach. Elevate your business with Innovators AI HUB.";
         break;
+
       case 'portfolio':
         title = 'Our Portfolio | Innovators AI HUB';
         description = 'Explore our portfolio of AI brand films, autonomous agent setups, and advanced automation workflows built by Innovators AI HUB.';
