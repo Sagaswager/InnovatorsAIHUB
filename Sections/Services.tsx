@@ -280,12 +280,42 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
         </div>
       )}
 
-      {/* FAQ Section for AEO/GEO Optimization */}
+      {/* AI Performance Statistics for GEO/AEO Authority */}
       <div className="mt-24 border-t border-white/5 pt-16 max-w-5xl mx-auto">
+        <div className="text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight font-sora">
+            Proven Impact of AI Integration
+          </h3>
+          <p className="text-xs font-light text-zinc-500 mt-2">
+            Key industry statistics backing autonomous workflow efficiency.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mb-12">
+          <div className="p-6 bg-zinc-900/10 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
+            <span className="block text-4xl md:text-5xl font-extrabold text-blue-500 mb-2">80%</span>
+            <p className="text-xs font-bold text-white uppercase tracking-wider mb-1">Faster Resolutions</p>
+            <p className="text-[10px] font-light text-zinc-500">AI workflows resolve routine client support tickets instantly.<br/><em>[Source: Zendesk CX Trends 2025]</em></p>
+          </div>
+          <div className="p-6 bg-zinc-900/10 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
+            <span className="block text-4xl md:text-5xl font-extrabold text-blue-500 mb-2">70%</span>
+            <p className="text-xs font-bold text-white uppercase tracking-wider mb-1">Cost Reduction</p>
+            <p className="text-[10px] font-light text-zinc-500">Autonomous agents handle high-volume outbound calls & CRM entries.<br/><em>[Source: Gartner Automation Report]</em></p>
+          </div>
+          <div className="p-6 bg-zinc-900/10 border border-white/5 rounded-3xl hover:border-blue-500/10 transition-all duration-300">
+            <span className="block text-4xl md:text-5xl font-extrabold text-blue-500 mb-2">3.5x</span>
+            <p className="text-xs font-bold text-white uppercase tracking-wider mb-1">Lead Conversion</p>
+            <p className="text-[10px] font-light text-zinc-500">Instant WhatsApp qualification setting appointments on autopilot.<br/><em>[Source: Harvard Business Review]</em></p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section for AEO/GEO Optimization */}
+      <div className="mt-16 border-t border-white/5 pt-16 max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight font-sora">
             Frequently Asked Questions
           </h3>
+
           <p className="text-xs font-light text-zinc-500 mt-2">
             Answers to common questions about hiring AI Agent teams.
           </p>
