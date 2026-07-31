@@ -8,12 +8,13 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ isDarkMode, currentPage, navigateTo }) => {
   const externalLinks = [
-    { name: "Instagram", url: "https://www.instagram.com/contenaissance/" },
+    { name: "Instagram", url: "https://www.instagram.com/innovatorsaihub" },
     { name: "LinkedIn", url: "https://www.linkedin.com/company/108385521/" },
     { name: "YouTube", url: "https://www.youtube.com/@Contenaissance" },
     { name: "X (Twitter)", url: "https://x.com/contenaissance" },
     { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61579738437856" }
   ];
+
 
   return (
     <footer className="bg-zinc-950 border-t border-white/5">
