@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/ai-logos.png">
+    
     <!-- Primary SEO Metadata -->
     <title>Innovators AI HUB | AI-Agentic Systems & Brand Films</title>
-    <meta name="description" content="Hire autonomous AI agent teams to automate your company's workflows, WhatsApp customer engagement, voice calling, and outbound outreach. Elevate your brand with Innovators AI HUB.">
+    <meta name="description" content="Hire autonomous AI agent teams to automate workflows, WhatsApp support, voice calls & outbound outreach. Elevate your business with Innovators AI HUB.">
     <meta name="keywords" content="AI Agents, AI Agent Teams, AI Brand Films, Business Automation, WhatsApp AI Agent, Voice calling AI, LinkedIn AI Agent, AI automation, Innovators AI HUB">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://innovatorsaihub.com/">
@@ -18,6 +21,33 @@
         if (canonical) canonical.setAttribute('href', pageUrl);
       })();
     </script>
+
+    <!-- Google Tag Manager / Google Analytics (GA4) -->
+    <!-- Replace 'G-XXXXXXXXXX' with actual Measurement ID/Container ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Meta Pixel Code (Facebook Pixel) -->
+    <!-- Replace 'YOUR_PIXEL_ID' with actual Facebook Pixel ID -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+
+
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -52,6 +82,27 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Innovators AI HUB",
+      "image": "https://innovatorsaihub.com/ai-logos.png",
+      "url": "https://innovatorsaihub.com/",
+      "telephone": "+919810875683",
+      "email": "Sagarmasand9@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office B23, 2nd Floor, Sec. 19",
+        "addressLocality": "Noida",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "201301",
+        "addressCountry": "IN"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Innovators AI HUB",
       "url": "https://innovatorsaihub.com/",
@@ -63,6 +114,7 @@
       ]
     }
     </script>
+
 
     <script type="application/ld+json">
     {
@@ -180,6 +232,10 @@
 </script>
 </head>
 <body class="cinematic-overlay">
+    <!-- Meta Pixel Code noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>

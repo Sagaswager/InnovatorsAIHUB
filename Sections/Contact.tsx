@@ -29,7 +29,9 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode, isFullPage = false }) => 
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-1 text-white/40">Email Studio</p>
-                <p className="text-2xl md:text-3xl font-medium text-white tracking-tight">Sagarmasand9@gmail.com</p>
+                <p className="text-2xl md:text-3xl font-medium text-white tracking-tight">
+                  <a href="mailto:Sagarmasand9@gmail.com" className="hover:text-blue-400 transition-colors">Sagarmasand9@gmail.com</a>
+                </p>
               </div>
             </div>
 
@@ -39,7 +41,10 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode, isFullPage = false }) => 
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-1 text-white/40">Phone / Whatsapp</p>
-                <p className="text-2xl md:text-3xl font-medium text-white tracking-tight">+919810875683<br />+919873641909</p>
+                <p className="text-2xl md:text-3xl font-medium text-white tracking-tight flex flex-col">
+                  <a href="tel:+919810875683" className="hover:text-blue-400 transition-colors">+91 9810875683</a>
+                  <a href="tel:+919873641909" className="hover:text-blue-400 transition-colors">+91 9873641909</a>
+                </p>
               </div>
             </div>
 
@@ -49,13 +54,14 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode, isFullPage = false }) => 
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-1 text-white/40">Our Base</p>
-                <p className="text-2xl md:text-3xl font-medium text-white leading-tight tracking-tight">
+                <address className="text-2xl md:text-3xl font-medium text-white leading-tight tracking-tight not-italic">
                   Office B23, 2nd Floor,<br />
                   Sec. 19, Noida
-                </p>
+                </address>
               </div>
             </div>
           </div>
+
 
         </div>
 

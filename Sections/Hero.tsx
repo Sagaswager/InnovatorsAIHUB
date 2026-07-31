@@ -48,10 +48,11 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, navigateTo }) => {
         style={{ opacity, y }}
         className="relative z-10 w-full max-w-[1400px] flex flex-col items-center"
       >
-        {/* Semantic H1 for search engines */}
-        <h1 className="sr-only">Grow Brand with AI - Innovators AI HUB</h1>
-
-        <div className="flex items-center justify-center gap-6 md:gap-12 lg:gap-16" aria-hidden="true">
+        {/* Semantic H1 for search engines and screen readers */}
+        <h1 
+          className="flex items-center justify-center gap-6 md:gap-12 lg:gap-16" 
+          aria-label="Grow Brand with AI - Innovators AI HUB"
+        >
           <div className="flex flex-col items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -94,28 +95,29 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, navigateTo }) => {
               
               <div className="absolute inset-0 pointer-events-none">
                 <motion.div 
-                  className="absolute -top-4 -right-6 md:-top-10 md:-right-20 w-6 h-6 md:w-16 md:h-16 flex items-center justify-center"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2, duration: 1.2, ease: "backOut" }}
+                   className="absolute -top-4 -right-6 md:-top-10 md:-right-20 w-6 h-6 md:w-16 md:h-16 flex items-center justify-center"
+                   initial={{ opacity: 0, scale: 0 }}
+                   animate={{ opacity: 1, scale: 1 }}
+                   transition={{ delay: 1.2, duration: 1.2, ease: "backOut" }}
                 >
                   <motion.div 
-                    className="absolute w-full h-full z-10 bg-white"
-                    style={{ clipPath: 'polygon(50% 0%, 54% 46%, 100% 50%, 54% 54%, 50% 100%, 46% 54%, 0% 50%, 46% 46%)' }}
-                    animate={{ scale: [1, 1.15, 1], opacity: [0.9, 1, 0.9] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                     className="absolute w-full h-full z-10 bg-white"
+                     style={{ clipPath: 'polygon(50% 0%, 54% 46%, 100% 50%, 54% 54%, 50% 100%, 46% 54%, 0% 50%, 46% 46%)' }}
+                     animate={{ scale: [1, 1.15, 1], opacity: [0.9, 1, 0.9] }}
+                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   />
                   <div className="absolute w-1 h-1 md:w-2 md:h-2 bg-white rounded-full blur-[1px] shadow-[0_0_15px_rgba(255,255,255,1)] z-20" />
                   <motion.div 
-                    className="absolute inset-0 rounded-full opacity-40 blur-[20px] md:blur-[30px] bg-blue-500"
-                    animate={{ scale: [1, 1.6, 1], opacity: [0.2, 0.5, 0.2] }}
-                    transition={{ duration: 4, repeat: Infinity }}
+                     className="absolute inset-0 rounded-full opacity-40 blur-[20px] md:blur-[30px] bg-blue-500"
+                     animate={{ scale: [1, 1.6, 1], opacity: [0.2, 0.5, 0.2] }}
+                     transition={{ duration: 4, repeat: Infinity }}
                   />
                 </motion.div>
               </div>
             </span>
           </motion.div>
-        </div>
+        </h1>
+
 
         <div className="flex flex-col items-center text-center mt-6 md:mt-4 w-full">
           <motion.p 
