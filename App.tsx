@@ -14,10 +14,11 @@ import { ArrowRight } from 'lucide-react';
 import AgentTeams from './Sections/AgentTeams';
 import CustomAgentModal from './Sections/CustomAgentModal';
 import CustomAgentBanner from './Sections/CustomAgentBanner';
+import EventRegistration from './Sections/EventRegistration';
 
 const App: React.FC = () => {
   const [isDarkMode] = useState(true);
-  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register'>('home');
   const [showAgentPopup, setShowAgentPopup] = useState(true);
   const [selectedAgents, setSelectedAgents] = useState<string[]>([]);
   const [customDescriptions, setCustomDescriptions] = useState<Record<string, string>>({});
@@ -46,7 +47,7 @@ const App: React.FC = () => {
     }
   };
 
-  const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact') => {
+  const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register') => {
     setCurrentPage(page);
     const path = page === 'home' ? '/' : `/${page}`;
     window.history.pushState({ page }, '', path);
@@ -59,7 +60,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'home';
-      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact') {
+      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact' || path === 'register') {
         setCurrentPage(path as any);
       }
     };
@@ -92,6 +93,10 @@ const App: React.FC = () => {
       case 'contact':
         title = 'Contact Us | Innovators AI HUB';
         description = 'Get in touch with Innovators AI HUB to hire custom AI agents or build multi-agent workflows tailored to your business operations.';
+        break;
+      case 'register':
+        title = 'AI for Business Event Registration | Innovators AI HUB';
+        description = 'Register for the AI for Business event at Ofis Square, Noida. Meet Founders using AI for 10X Growth, AI Agents workshops, and premium networking.';
         break;
     }
 
@@ -271,6 +276,18 @@ const App: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               <Contact isDarkMode={isDarkMode} isFullPage={true} />
+            </motion.div>
+          )}
+
+          {currentPage === 'register' && (
+            <motion.div
+              key="register-page"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.02 }}
+              transition={{ duration: 0.5 }}
+            >
+              <EventRegistration isDarkMode={isDarkMode} />
             </motion.div>
           )}
         </AnimatePresence>

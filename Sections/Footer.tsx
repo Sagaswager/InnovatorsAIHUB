@@ -2,8 +2,8 @@ import React from 'react';
 
 interface FooterProps {
   isDarkMode: boolean;
-  currentPage?: 'home' | 'portfolio' | 'services' | 'contact';
-  navigateTo?: (page: 'home' | 'portfolio' | 'services' | 'contact') => void;
+  currentPage?: 'home' | 'portfolio' | 'services' | 'contact' | 'register';
+  navigateTo?: (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register') => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ isDarkMode, currentPage, navigateTo }) => {
@@ -30,6 +30,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode, currentPage, navigateTo }) 
 
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10 text-[10px] font-bold tracking-[0.4em] uppercase">
           <button onClick={() => navigateTo?.('services')} className="text-white/40 hover:text-white transition-all">Hire AI</button>
+          <button onClick={() => navigateTo?.('register')} className="text-white/40 hover:text-white transition-all">Event</button>
           <a 
             href="https://innovatorslinai.duckdns.org/dashboard.html" 
             target="_blank" 
