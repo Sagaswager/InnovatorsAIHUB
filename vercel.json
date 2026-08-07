@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/((?!assets/|robots.txt|sitemap.xml|llms.txt|pricing.md|ai-logos.png|IMG_6279.jpg).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
