@@ -25,8 +25,7 @@ import {
   QrCode,
   Sparkles,
   Timer,
-  ChevronRight,
-  TrendingUp
+  ChevronRight
 } from 'lucide-react';
 import { trackEvent } from '../analytics';
 
@@ -95,12 +94,12 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
   ];
 
   const highlightIcons = [
-    <Users className="w-5 h-5 text-blue-400 shrink-0" />,
-    <Compass className="w-5 h-5 text-blue-400 shrink-0" />,
-    <Megaphone className="w-5 h-5 text-blue-400 shrink-0" />,
-    <Award className="w-5 h-5 text-blue-400 shrink-0" />,
-    <ShieldCheck className="w-5 h-5 text-blue-400 shrink-0" />,
-    <Coffee className="w-5 h-5 text-blue-400 shrink-0" />
+    <Users className="w-5 h-5 text-emerald-400 shrink-0" />,
+    <Compass className="w-5 h-5 text-emerald-400 shrink-0" />,
+    <Megaphone className="w-5 h-5 text-emerald-400 shrink-0" />,
+    <Award className="w-5 h-5 text-emerald-400 shrink-0" />,
+    <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />,
+    <Coffee className="w-5 h-5 text-emerald-400 shrink-0" />
   ];
 
   // Simulating slightly shifting seats left to create FOMO (urgency)
@@ -265,9 +264,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
   return (
     <div className="relative min-h-screen pt-32 pb-24 px-4 sm:px-6 md:px-8 bg-zinc-950 overflow-hidden text-white font-sans">
       
-      {/* Background radial glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[130px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-purple-500/5 blur-[120px] rounded-full pointer-events-none z-0" />
+      {/* Background radial glow - Subtle Green Accent */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-[800px] mx-auto">
         
@@ -298,15 +297,15 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                 </h1>
 
                 {/* Event Subtitle */}
-                <p className="text-lg sm:text-xl md:text-2xl font-light text-blue-400 tracking-tight mb-8">
+                <p className="text-lg sm:text-xl md:text-2xl font-light text-emerald-400 tracking-tight mb-8">
                   Meet Founders using AI for 10X Growth
                 </p>
 
                 {/* Date, Venue, Time Badges */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
                   
-                  <div className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border border-white/5 bg-zinc-900/40 backdrop-blur-md text-left">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 hover:border-emerald-500/10 transition-all duration-300 text-left">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
                       <Calendar size={18} />
                     </div>
                     <div>
@@ -316,8 +315,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border border-white/5 bg-zinc-900/40 backdrop-blur-md text-left">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 hover:border-emerald-500/10 transition-all duration-300 text-left">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
                       <MapPin size={18} />
                     </div>
                     <div className="min-w-0">
@@ -327,8 +326,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border border-white/5 bg-zinc-900/40 backdrop-blur-md text-left">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 hover:border-emerald-500/10 transition-all duration-300 text-left">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
                       <Clock size={18} />
                     </div>
                     <div>
@@ -358,19 +357,19 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                 </div>
 
                 {/* Seats Left Progress Bar */}
-                <div className="max-w-md mx-auto p-5 rounded-2xl border border-blue-500/10 bg-blue-950/10 backdrop-blur-md">
+                <div className="max-w-md mx-auto p-5 rounded-2xl border border-emerald-500/10 bg-emerald-950/10 backdrop-blur-md">
                   <div className="flex justify-between items-center mb-2.5 text-xs">
-                    <span className="font-semibold text-blue-400">Registration Status</span>
+                    <span className="font-semibold text-emerald-400">Registration Status</span>
                     <span className="font-bold text-white uppercase tracking-wider">Only {seatsLeft} Seats Left!</span>
                   </div>
                   
                   {/* The bar */}
-                  <div className="w-full h-2.5 bg-zinc-900 rounded-full overflow-hidden border border-white/5">
+                  <div className="w-full h-1.5 bg-zinc-900/60 rounded-full overflow-hidden border border-white/5">
                     <motion.div 
                       initial={{ width: "0%" }}
                       animate={{ width: `${((70 - seatsLeft) / 70) * 100}%` }}
                       transition={{ duration: 1.2, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-blue-600 to-indigo-500 rounded-full"
+                      className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]"
                     />
                   </div>
                   <p className="text-[10px] text-white/40 text-left mt-2 font-medium uppercase tracking-wider">
@@ -381,9 +380,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
               </div>
 
               {/* Form Card */}
-              <div className="bg-zinc-900/60 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative">
+              <div className="bg-zinc-900/40 backdrop-blur-2xl border border-zinc-800/80 hover:border-zinc-700/60 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-[2.5rem] p-8 md:p-12 transition-colors duration-500 relative">
                 <div className="mb-10 text-left">
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-400 mb-2 block">Secure Your Access</span>
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-2 block">Secure Your Access</span>
                   <h2 className="text-3xl font-bold tracking-tight text-white">Attendee Details</h2>
                   <p className="text-xs text-white/40 mt-1">
                     Please enter exact information to generate your WhatsApp entry pass correctly.
@@ -394,9 +393,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                   
                   {/* Name */}
                   <div className="relative">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block text-white/40">Name</label>
+                    <label className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block transition-colors duration-300 ${focused === 'name' ? 'text-emerald-400' : 'text-white/40'}`}>Name</label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-0 text-white/30"><User size={18} strokeWidth={1.5} /></span>
+                      <span className={`absolute left-0 transition-colors duration-300 ${focused === 'name' ? 'text-emerald-400' : 'text-white/30'}`}><User size={18} strokeWidth={1.5} /></span>
                       <input 
                         required
                         name="name"
@@ -405,7 +404,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         onFocus={() => setFocused('name')}
                         onBlur={() => setFocused(null)}
                         type="text" 
-                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'name' ? 'border-blue-500' : 'border-zinc-800'}`} 
+                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'name' ? 'border-emerald-500 focus:shadow-[0_1px_0_0_#10b981]' : 'border-zinc-800'}`} 
                         placeholder="Your full name"
                       />
                     </div>
@@ -413,9 +412,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                   {/* Email */}
                   <div className="relative">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block text-white/40">Email Address</label>
+                    <label className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block transition-colors duration-300 ${focused === 'email' ? 'text-emerald-400' : 'text-white/40'}`}>Email Address</label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-0 text-white/30"><Mail size={18} strokeWidth={1.5} /></span>
+                      <span className={`absolute left-0 transition-colors duration-300 ${focused === 'email' ? 'text-emerald-400' : 'text-white/30'}`}><Mail size={18} strokeWidth={1.5} /></span>
                       <input 
                         required
                         name="email"
@@ -424,7 +423,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         onFocus={() => setFocused('email')}
                         onBlur={() => setFocused(null)}
                         type="email" 
-                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'email' ? 'border-blue-500' : 'border-zinc-800'}`} 
+                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'email' ? 'border-emerald-500 focus:shadow-[0_1px_0_0_#10b981]' : 'border-zinc-800'}`} 
                         placeholder="name@company.com"
                       />
                     </div>
@@ -432,13 +431,13 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                   {/* Phone */}
                   <div className="relative">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block text-white/40">Phone Number (WhatsApp)</label>
+                    <label className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block transition-colors duration-300 ${focused === 'phone' ? 'text-emerald-400' : 'text-white/40'}`}>Phone Number (WhatsApp)</label>
                     <div className="flex gap-3">
                       <div className="relative shrink-0">
                         <select
                           value={countryCode}
                           onChange={(e) => setCountryCode(e.target.value)}
-                          className="h-full bg-zinc-950 border-b border-zinc-800 focus:border-blue-500 outline-none py-3 text-white text-sm font-semibold tracking-wider transition-all cursor-pointer rounded-t-lg px-2"
+                          className="h-full bg-zinc-950 border-b border-zinc-800 focus:border-emerald-500 outline-none py-3 text-white text-sm font-semibold tracking-wider transition-all cursor-pointer rounded-t-lg px-2"
                         >
                           {countryCodes.map((item) => (
                             <option key={item.code} value={item.code} className="bg-zinc-900 text-white">
@@ -448,7 +447,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         </select>
                       </div>
                       <div className="relative flex-grow flex items-center">
-                        <span className="absolute left-0 text-white/30"><Phone size={18} strokeWidth={1.5} /></span>
+                        <span className={`absolute left-0 transition-colors duration-300 ${focused === 'phone' ? 'text-emerald-400' : 'text-white/30'}`}><Phone size={18} strokeWidth={1.5} /></span>
                         <input 
                           required
                           name="phone"
@@ -459,7 +458,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                           type="tel" 
                           pattern="[0-9]*"
                           inputMode="numeric"
-                          className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'phone' ? 'border-blue-500' : 'border-zinc-800'}`} 
+                          className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'phone' ? 'border-emerald-500 focus:shadow-[0_1px_0_0_#10b981]' : 'border-zinc-800'}`} 
                           placeholder="99999 99999"
                         />
                       </div>
@@ -468,9 +467,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                   {/* Company */}
                   <div className="relative">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block text-white/40">Brand / Company Name</label>
+                    <label className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block transition-colors duration-300 ${focused === 'company' ? 'text-emerald-400' : 'text-white/40'}`}>Brand / Company Name</label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-0 text-white/30"><Building2 size={18} strokeWidth={1.5} /></span>
+                      <span className={`absolute left-0 transition-colors duration-300 ${focused === 'company' ? 'text-emerald-400' : 'text-white/30'}`}><Building2 size={18} strokeWidth={1.5} /></span>
                       <input 
                         required
                         name="company"
@@ -479,7 +478,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         onFocus={() => setFocused('company')}
                         onBlur={() => setFocused(null)}
                         type="text" 
-                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'company' ? 'border-blue-500' : 'border-zinc-800'}`} 
+                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'company' ? 'border-emerald-500 focus:shadow-[0_1px_0_0_#10b981]' : 'border-zinc-800'}`} 
                         placeholder="e.g. InnovatorsHub"
                       />
                     </div>
@@ -487,9 +486,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                   {/* Designation */}
                   <div className="relative">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block text-white/40">Designation</label>
+                    <label className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block transition-colors duration-300 ${focused === 'designation' ? 'text-emerald-400' : 'text-white/40'}`}>Designation</label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-0 text-white/30"><Briefcase size={18} strokeWidth={1.5} /></span>
+                      <span className={`absolute left-0 transition-colors duration-300 ${focused === 'designation' ? 'text-emerald-400' : 'text-white/30'}`}><Briefcase size={18} strokeWidth={1.5} /></span>
                       <input 
                         required
                         name="designation"
@@ -498,7 +497,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         onFocus={() => setFocused('designation')}
                         onBlur={() => setFocused(null)}
                         type="text" 
-                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'designation' ? 'border-blue-500' : 'border-zinc-800'}`} 
+                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'designation' ? 'border-emerald-500 focus:shadow-[0_1px_0_0_#10b981]' : 'border-zinc-800'}`} 
                         placeholder="e.g. Founder, Growth Head"
                       />
                     </div>
@@ -506,9 +505,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                   {/* City */}
                   <div className="relative">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block text-white/40">City</label>
+                    <label className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block transition-colors duration-300 ${focused === 'city' ? 'text-emerald-400' : 'text-white/40'}`}>City</label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-0 text-white/30"><Map size={18} strokeWidth={1.5} /></span>
+                      <span className={`absolute left-0 transition-colors duration-300 ${focused === 'city' ? 'text-emerald-400' : 'text-white/30'}`}><Map size={18} strokeWidth={1.5} /></span>
                       <input 
                         required
                         name="city"
@@ -517,7 +516,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         onFocus={() => setFocused('city')}
                         onBlur={() => setFocused(null)}
                         type="text" 
-                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'city' ? 'border-blue-500' : 'border-zinc-800'}`} 
+                        className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg placeholder:text-zinc-700 ${focused === 'city' ? 'border-emerald-500 focus:shadow-[0_1px_0_0_#10b981]' : 'border-zinc-800'}`} 
                         placeholder="e.g. Noida"
                       />
                     </div>
@@ -533,7 +532,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         onChange={handleChange}
                         className="sr-only peer"
                       />
-                      <div className="w-5 h-5 rounded border border-white/20 bg-zinc-950 flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-all">
+                      <div className="w-5 h-5 rounded border border-white/20 bg-zinc-950 flex items-center justify-center peer-checked:bg-emerald-500 peer-checked:border-emerald-500 transition-all">
                         <Check className="w-3.5 h-3.5 text-white stroke-[3px] opacity-0 peer-checked:opacity-100 transition-opacity" />
                       </div>
                     </label>
@@ -543,7 +542,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                   </div>
 
                   {/* Human verification */}
-                  <div className="flex items-start gap-3.5 p-4 rounded-2xl border border-blue-500/10 bg-blue-950/5">
+                  <div className="flex items-start gap-3.5 p-4 rounded-2xl border border-emerald-500/10 bg-emerald-950/5">
                     <label className="relative flex items-center cursor-pointer mt-0.5 shrink-0">
                       <input 
                         type="checkbox"
@@ -553,11 +552,11 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                         className="sr-only peer"
                         required
                       />
-                      <div className="w-5 h-5 rounded border border-blue-500/20 bg-zinc-950 flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-all">
+                      <div className="w-5 h-5 rounded border border-emerald-500/20 bg-zinc-950 flex items-center justify-center peer-checked:bg-emerald-500 peer-checked:border-emerald-500 transition-all">
                         <Check className="w-3.5 h-3.5 text-white stroke-[3px] opacity-0 peer-checked:opacity-100 transition-opacity" />
                       </div>
                     </label>
-                    <span className="text-xs text-blue-300/80 leading-normal select-none font-medium">
+                    <span className="text-xs text-emerald-300/80 leading-normal select-none font-medium">
                       Yes, I verify that I am an actual founder/executive attending in person.
                     </span>
                   </div>
@@ -570,7 +569,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                       disabled={isSubmitting || !formData.humanVerified}
                       whileHover={{ scale: formData.humanVerified ? 1.02 : 1 }}
                       whileTap={{ scale: formData.humanVerified ? 0.98 : 1 }}
-                      className="w-full py-6 rounded-full font-bold uppercase tracking-[0.35em] text-[11px] flex items-center justify-center gap-3 transition-all bg-white text-black hover:bg-zinc-100 disabled:bg-zinc-800 disabled:text-zinc-600 disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_4px_25px_rgba(255,255,255,0.08)]"
+                      className="w-full py-6 rounded-full font-bold uppercase tracking-[0.35em] text-[11px] flex items-center justify-center gap-3 transition-all bg-white text-black hover:bg-zinc-100 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] disabled:bg-zinc-800 disabled:text-zinc-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
                     >
                       {isSubmitting ? (
                         <>Reserving Your Slot <Loader2 size={18} className="animate-spin" /></>
@@ -600,7 +599,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
             >
               
               {/* Main Container */}
-              <div className="bg-zinc-900/80 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative">
+              <div className="bg-zinc-900/40 backdrop-blur-2xl border border-zinc-800/80 hover:border-zinc-700/60 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-[2.5rem] p-8 md:p-12 relative">
                 
                 {/* Back Link */}
                 <button
@@ -620,7 +619,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-400 mb-2 block">AI for Business Masterclass</span>
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-2 block">AI for Business Masterclass</span>
                   <h2 className="text-4xl font-bold tracking-tight text-white mb-2">Claim Founder's Pass</h2>
                   <p className="text-sm font-light text-zinc-400 max-w-md mx-auto">
                     Hi <span className="font-semibold text-white">{registeredUser.name}</span>, complete your ₹899 payment to generate your official invite.
@@ -635,10 +634,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                   </div>
                   <ChevronRight className="w-5 h-5 text-white/10" />
                   <div className="text-left">
-                    <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest block">Founder's Special</span>
+                    <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-widest block">Founder's Special</span>
                     <span className="text-3xl font-extrabold text-white">₹899</span>
                   </div>
-                  <div className="ml-2 px-3 py-1 rounded-full bg-blue-600/10 text-[9px] font-bold uppercase tracking-wider text-blue-400 border border-blue-500/10">
+                  <div className="ml-2 px-3 py-1 rounded-full bg-emerald-600/10 text-[9px] font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/10">
                     Save 40%
                   </div>
                 </div>
@@ -664,7 +663,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                   <div className="flex items-start gap-3 text-sm">
                     <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span className="text-blue-300"><strong>Free AI Agent Toolkit Bonus</strong>: Pre-built templates, CRM automations, & prompts package (worth ₹25,000)</span>
+                    <span className="text-emerald-300"><strong>Free AI Agent Toolkit Bonus</strong>: Pre-built templates, CRM automations, & prompts package (worth ₹25,000)</span>
                   </div>
                 </div>
 
@@ -676,7 +675,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                     
                     {/* Visual QR container */}
                     <div className="relative group">
-                      <div className="absolute inset-0 bg-blue-500/5 blur-xl rounded-2xl group-hover:bg-blue-500/10 transition-colors pointer-events-none" />
+                      <div className="absolute inset-0 bg-emerald-500/5 blur-xl rounded-2xl group-hover:bg-emerald-500/10 transition-colors pointer-events-none" />
                       <div className="w-[180px] h-[180px] bg-white p-3 rounded-2xl border border-white/10 shadow-xl relative z-10 flex items-center justify-center">
                         <img 
                           src={qrCodeUrl}
@@ -690,7 +689,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                     <div className="text-center space-y-2">
                       <p className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-500">Scan QR Code using any UPI App</p>
                       <p className="text-xs text-zinc-400">(BHIM, GPay, Paytm, PhonePe, Cred)</p>
-                      <p className="text-xs font-semibold text-blue-400 tracking-wider">UPI ID: sagafreelance@okaxis</p>
+                      <p className="text-xs font-semibold text-emerald-400 tracking-wider">UPI ID: sagafreelance@okaxis</p>
                       <p className="text-[10px] text-white/30 uppercase tracking-wider">Verified Merchant Account: Sagar</p>
                     </div>
 
@@ -699,7 +698,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                       <motion.a
                         href={upiPaymentLink}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
+                        className="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
                       >
                         <Sparkles className="w-4 h-4" /> Tap to Pay via UPI Apps
                       </motion.a>
@@ -714,11 +713,11 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                   <form onSubmit={handlePaymentVerify} className="space-y-6 text-left border-t border-white/5 pt-8">
                     
                     <div className="relative">
-                      <label className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2.5 block text-white/40">
+                      <label className={`text-[10px] font-bold uppercase tracking-[0.3em] mb-2.5 block transition-colors duration-300 ${focused === 'txnId' ? 'text-emerald-400' : 'text-white/40'}`}>
                         Enter 12-Digit UPI Ref No. / UTR ID (After Payment)
                       </label>
                       <div className="relative flex items-center">
-                        <span className="absolute left-0 text-white/30"><QrCode size={18} strokeWidth={1.5} /></span>
+                        <span className={`absolute left-0 transition-colors duration-300 ${focused === 'txnId' ? 'text-emerald-400' : 'text-white/30'}`}><QrCode size={18} strokeWidth={1.5} /></span>
                         <input 
                           required
                           name="txnId"
@@ -729,7 +728,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                           type="text" 
                           maxLength={12}
                           pattern="[0-9]{12}"
-                          className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg tracking-widest placeholder:text-zinc-700 ${focused === 'txnId' ? 'border-blue-500' : 'border-zinc-800'}`} 
+                          className={`w-full bg-transparent border-b outline-none pl-8 py-3 transition-all text-white text-lg tracking-widest placeholder:text-zinc-700 ${focused === 'txnId' ? 'border-emerald-500 focus:shadow-[0_1px_0_0_#10b981]' : 'border-zinc-800'}`} 
                           placeholder="e.g. 628945009124"
                         />
                       </div>
@@ -782,7 +781,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                             disabled={isSubmitting || txnId.length < 12}
                             whileHover={{ scale: txnId.length === 12 ? 1.02 : 1 }}
                             whileTap={{ scale: txnId.length === 12 ? 0.98 : 1 }}
-                            className="w-full py-6 rounded-full font-bold uppercase tracking-[0.3em] text-[11px] flex items-center justify-center gap-3 transition-all bg-white text-black hover:bg-zinc-100 disabled:bg-zinc-800 disabled:text-zinc-600 disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_4px_25px_rgba(255,255,255,0.08)]"
+                            className="w-full py-6 rounded-full font-bold uppercase tracking-[0.3em] text-[11px] flex items-center justify-center gap-3 transition-all bg-white text-black hover:bg-zinc-100 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] disabled:bg-zinc-800 disabled:text-zinc-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none"
                           >
                             {isSubmitting ? (
                               <>Verifying Transaction... <Loader2 size={18} className="animate-spin" /></>
@@ -813,7 +812,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
               transition={{ duration: 0.5 }}
               className="max-w-[600px] mx-auto text-center"
             >
-              <div className="bg-zinc-900/80 border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl flex flex-col items-center">
+              <div className="bg-zinc-900/40 backdrop-blur-2xl border border-zinc-800/80 hover:border-zinc-700/60 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-[2.5rem] p-8 md:p-12 flex flex-col items-center">
                 
                 {/* Green Glow Check Ring */}
                 <div className="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-8 relative">
@@ -845,7 +844,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                   href={`https://wa.me/919810875683?text=${encodeURIComponent(`Hi Sagar, my UTR is ${txnId}. Please share my pass details.`)}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-5 rounded-full bg-white text-black font-bold uppercase tracking-wider text-xs flex items-center gap-2 shadow-xl hover:bg-zinc-100"
+                  className="px-8 py-5 rounded-full bg-white text-black font-bold uppercase tracking-wider text-xs flex items-center gap-2 shadow-xl hover:bg-zinc-100 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all duration-300"
                 >
                   Contact Sagar on WhatsApp <ArrowRight size={14} />
                 </motion.a>
@@ -859,7 +858,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
         {/* Dynamic FAQ / Help hint */}
         <div className="mt-12 text-center">
           <p className="text-xs text-white/30 flex items-center justify-center gap-2">
-            <HelpCircle size={14} /> Questions about payments? Reach us at <a href="mailto:Sagarmasand9@gmail.com" className="text-white/60 hover:text-blue-400 underline transition-colors">Sagarmasand9@gmail.com</a>
+            <HelpCircle size={14} /> Questions about payments? Reach us at <a href="mailto:Sagarmasand9@gmail.com" className="text-white/60 hover:text-emerald-400 underline transition-colors">Sagarmasand9@gmail.com</a>
           </p>
         </div>
 
