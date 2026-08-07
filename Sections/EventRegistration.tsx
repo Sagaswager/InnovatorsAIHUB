@@ -626,7 +626,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-2 block">AI for Business Masterclass</span>
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-2 block">AI for Business Leaders</span>
                   <h2 className="text-4xl font-bold tracking-tight text-white mb-2">Claim Founder's Pass</h2>
                   <p className="text-sm font-light text-zinc-400 max-w-md mx-auto">
                     Hi <span className="font-semibold text-white">{registeredUser.name}</span>, complete your ₹899 payment to generate your official invite.
@@ -652,11 +652,6 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
                 {/* Value Stack List (Persuasive copywriting) */}
                 <div className="space-y-4 mb-8 text-left bg-zinc-950/40 p-6 rounded-3xl border border-white/5">
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-2">Everything included in your pass:</h4>
-                  
-                  <div className="flex items-start gap-3 text-sm">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span><strong>1:1 Hands-on AI Workshop</strong>: Build your own AI Agents live (worth ₹10,000)</span>
-                  </div>
 
                   <div className="flex items-start gap-3 text-sm">
                     <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -665,7 +660,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = ({ isDarkMode }) => 
 
                   <div className="flex items-start gap-3 text-sm">
                     <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span><strong>VIP Buffet Lunch & High Tea</strong>: Full day dining at Ofis Square, Sector 3</span>
+                    <span><strong>Elite High Tea</strong>: Networking and refreshments at Ofis Square, Sector 3</span>
                   </div>
 
                   <div className="flex items-start gap-3 text-sm">
