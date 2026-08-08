@@ -290,7 +290,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
         )}
       </AnimatePresence>
     </>
-  );
-};
-
-export default Header;
+    );
+  };
+  
+  export default Header;

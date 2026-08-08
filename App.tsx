@@ -9,7 +9,6 @@ import Footer from './Sections/Footer';
 import Port from './Sections/Port';
 import SnowEffect from './Sections/SnowEffect';
 import AIQuote from './Sections/AIQuote';
-import AgentPopup from './Sections/AgentPopup';
 import { ArrowRight } from 'lucide-react';
 import AgentTeams from './Sections/AgentTeams';
 import CustomAgentModal from './Sections/CustomAgentModal';
@@ -19,7 +18,6 @@ import EventRegistration from './Sections/EventRegistration';
 const App: React.FC = () => {
   const [isDarkMode] = useState(true);
   const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register'>('home');
-  const [showAgentPopup, setShowAgentPopup] = useState(true);
   const [selectedAgents, setSelectedAgents] = useState<string[]>([]);
   const [customDescriptions, setCustomDescriptions] = useState<Record<string, string>>({});
   const [isCustomModalOpen, setIsCustomModalOpen] = useState(false);
@@ -165,9 +163,6 @@ const App: React.FC = () => {
           >
             <SnowEffect />
           </motion.div>
-        )}
-        {showAgentPopup && (
-          <AgentPopup key="agent-popup" onClose={() => setShowAgentPopup(false)} />
         )}
         {isCustomModalOpen && (
           <CustomAgentModal 
