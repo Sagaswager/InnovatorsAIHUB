@@ -650,4 +650,340 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                       <p className="text-sm font-semibold text-white">
                         Ofis Square, Noida
                       </p>
-                      <p className="text-xs text-white">Sector
+                      <p className="text-xs text-white">Sector 3, Noida</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3.5 px-5 py-4 rounded-2xl border border-white/10 bg-zinc-900/40 text-left">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                      <Clock size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold">
+                        Time
+                      </p>
+                      <p className="text-sm font-semibold text-white">
+                        10:00 AM – 2:00 PM
+                      </p>
+                      <p className="text-xs text-white">
+                        IST (Morning Session)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 md:p-8 rounded-3xl border border-white/10 bg-zinc-900/40 backdrop-blur-md text-left mb-10">
+                  <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-300 mb-6 flex items-center gap-2">
+                    <span>Event Highlights</span>
+                    <div className="h-px bg-white/10 flex-grow" />
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {highlights.map((item, index) => (
+                      <div key={item} className="flex items-start gap-3">
+                        {highlightIcons[index]}
+                        <span className="text-sm font-semibold text-white leading-snug">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="max-w-md mx-auto p-5 rounded-2xl border border-emerald-500/20 bg-emerald-950/20 backdrop-blur-md">
+                  <div className="flex justify-between items-center mb-2.5 text-xs">
+                    <span className="font-semibold text-emerald-300">
+                      Registration Status
+                    </span>
+
+                    <span className="font-bold text-white uppercase tracking-wider">
+                      Only {seatsLeft} Seats Left!
+                    </span>
+                  </div>
+
+                  <div className="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden border border-white/10">
+                    <motion.div
+                      initial={{ width: '0%' }}
+                      animate={{
+                        width: `${((70 - seatsLeft) / 70) * 100}%`,
+                      }}
+                      transition={{ duration: 1.2, ease: 'easeOut' }}
+                      className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 rounded-full"
+                    />
+                  </div>
+
+                  <p className="text-[10px] text-white/80 text-left mt-2 font-medium uppercase tracking-wider">
+                    {70 - seatsLeft} / 70 slots already reserved by elite
+                    founders
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {step === 'payment' && (
+            <motion.div
+              key="step-payment"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.02 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-[700px] mx-auto"
+            >
+              <div className="bg-zinc-900/40 backdrop-blur-2xl border border-zinc-800/80 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden">
+                <button
+                  onClick={() => setStep('form')}
+                  className="absolute top-8 left-8 text-xs text-white hover:text-emerald-300 transition-colors font-bold uppercase tracking-wider"
+                >
+                  ← Edit Info
+                </button>
+
+                <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl bg-red-950/20 border border-red-500/20 mb-8 max-w-sm mx-auto mt-4">
+                  <Timer className="w-4 h-4 text-red-300 animate-pulse" />
+                  <span className="text-[11px] font-bold text-red-300 uppercase tracking-wider">
+                    Seat Locked For: {formatTime(timeLeft)} Min
+                  </span>
+                </div>
+
+                <div className="text-center mb-8">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-emerald-400 mb-2 block">
+                    AI for Business Leaders
+                  </span>
+
+                  <h2 className="text-4xl font-bold tracking-tight text-white mb-2">
+                    Claim Founder's Pass
+                  </h2>
+
+                  <p className="text-sm font-medium text-emerald-100">
+                    Hi{' '}
+                    <span className="font-semibold text-white">
+                      {registeredUser.name}
+                    </span>
+                    , complete your ₹899 payment to generate your official
+                    invite.
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-center gap-4 py-4 border-y border-white/10 mb-8">
+                  <div>
+                    <span className="text-[9px] font-bold text-white/50 uppercase tracking-widest block">
+                      Original Price
+                    </span>
+                    <span className="text-lg text-white/40 line-through">
+                      ₹1,499
+                    </span>
+                  </div>
+
+                  <ChevronRight className="w-5 h-5 text-white/20" />
+
+                  <div>
+                    <span className="text-[9px] font-bold text-emerald-300 uppercase tracking-widest block">
+                      Founder's Special
+                    </span>
+                    <span className="text-3xl font-extrabold text-white">
+                      ₹899
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center gap-6 bg-zinc-950/80 p-8 rounded-3xl border border-white/10">
+                  <div className="w-[180px] h-[180px] bg-white p-3 rounded-2xl">
+                    <img
+                      src={qrCodeUrl}
+                      alt="Payment UPI QR Code"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+
+                  <div className="text-center space-y-2">
+                    <p className="text-[10px] font-extrabold uppercase tracking-widest text-white">
+                      Scan QR Code using any UPI App
+                    </p>
+                    <p className="text-xs text-emerald-300 font-semibold">
+                      BHIM, GPay, Paytm, PhonePe, Cred
+                    </p>
+                    <p className="text-sm font-bold text-emerald-400 tracking-wider">
+                      UPI ID: {upiId}
+                    </p>
+                    <p className="text-[10px] text-white/70 uppercase tracking-wider font-bold">
+                      Verified Merchant Account: Sagar
+                    </p>
+                  </div>
+
+                  <motion.a
+                    href={upiPaymentLink}
+                    whileTap={{ scale: 0.97 }}
+                    className="sm:hidden w-full py-4 rounded-2xl bg-emerald-600 text-white font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2"
+                  >
+                    <Sparkles className="w-4 h-4" />
+                    Tap to Pay via UPI Apps
+                  </motion.a>
+                </div>
+
+                <form
+                  onSubmit={handlePaymentVerify}
+                  className="space-y-6 text-left border-t border-white/10 pt-8 mt-8"
+                >
+                  <div>
+                    <label className={getLabelStyle('txnId')}>
+                      Enter 12-Digit UPI Ref No. / UTR ID
+                    </label>
+
+                    <div className={getInputStyle('txnId')}>
+                      <QrCode
+                        size={18}
+                        strokeWidth={1.5}
+                        className={`mr-3.5 shrink-0 ${
+                          focused === 'txnId'
+                            ? 'text-emerald-400'
+                            : 'text-zinc-400'
+                        }`}
+                      />
+
+                      <input
+                        required
+                        value={txnId}
+                        onChange={(event) =>
+                          setTxnId(event.target.value.replace(/[^0-9]/g, ''))
+                        }
+                        onFocus={() => setFocused('txnId')}
+                        onBlur={() => setFocused(null)}
+                        type="text"
+                        maxLength={12}
+                        pattern="[0-9]{12}"
+                        placeholder="e.g. 628945009124"
+                        className="w-full bg-transparent outline-none text-white text-base tracking-widest placeholder:text-zinc-400"
+                      />
+                    </div>
+
+                    <p className="text-[10px] text-white/75 mt-2 font-medium">
+                      UTR number is available on the payment success screen.
+                    </p>
+                  </div>
+
+                  {submitStatus === 'success' ? (
+                    <div className="flex flex-col items-center justify-center gap-3 py-6 px-4 bg-emerald-500/10 border border-emerald-500/20 rounded-[2rem] text-center">
+                      <div className="flex items-center gap-2.5 text-emerald-400 font-bold uppercase tracking-[0.2em] text-[11px]">
+                        <CheckCircle2 size={20} />
+                        Payment Verified Successfully!
+                      </div>
+                      <p className="text-xs text-white">
+                        Redirecting to WhatsApp...
+                      </p>
+                    </div>
+                  ) : submitStatus === 'error' ? (
+                    <div className="flex flex-col items-center justify-center gap-3 py-6 px-4 bg-red-500/10 border border-red-500/20 rounded-[2rem] text-center">
+                      <div className="flex items-center gap-2.5 text-red-400 font-bold uppercase tracking-[0.2em] text-[11px]">
+                        <AlertCircle size={20} />
+                        Verification Submission Failed
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setSubmitStatus('idle')}
+                        className="text-xs underline text-white font-bold"
+                      >
+                        Try Again
+                      </button>
+                    </div>
+                  ) : (
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting || txnId.length < 12}
+                      whileHover={{
+                        scale: txnId.length === 12 ? 1.02 : 1,
+                      }}
+                      whileTap={{
+                        scale: txnId.length === 12 ? 0.98 : 1,
+                      }}
+                      className="w-full py-6 rounded-full font-bold uppercase tracking-[0.3em] text-[11px] flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-zinc-950 disabled:from-zinc-800 disabled:to-zinc-800 disabled:text-zinc-600 disabled:opacity-40"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          Verifying Transaction
+                          <Loader2 size={18} className="animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          Payment Done - Confirm Registration
+                          <ArrowRight size={16} strokeWidth={2.5} />
+                        </>
+                      )}
+                    </motion.button>
+                  )}
+                </form>
+              </div>
+            </motion.div>
+          )}
+
+          {step === 'completed' && (
+            <motion.div
+              key="step-completed"
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-[600px] mx-auto text-center"
+            >
+              <div className="bg-zinc-900/40 backdrop-blur-2xl border border-zinc-800/80 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-[2.5rem] p-8 md:p-12 flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-8">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-400 to-green-600 flex items-center justify-center text-white">
+                    <Check size={26} strokeWidth={3} />
+                  </div>
+                </div>
+
+                <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-emerald-400 mb-2">
+                  Registration Verified
+                </span>
+
+                <h2 className="text-3xl font-bold tracking-tight text-white mb-4">
+                  Founder Pass Booked!
+                </h2>
+
+                <p className="text-sm font-medium text-white mb-4">
+                  Your payment of{' '}
+                  <span className="font-semibold text-emerald-400">₹899</span>{' '}
+                  has been logged under UTR ID:{' '}
+                  <span className="font-mono text-emerald-300 text-xs">
+                    {txnId}
+                  </span>
+                  .
+                </p>
+
+                <p className="text-xs text-white/95 leading-relaxed font-medium mb-8">
+                  Sagar and the Innovators AI Hub team will check your UTR and
+                  deliver your verified PDF pass on WhatsApp.
+                </p>
+
+                <motion.a
+                  href={`https://wa.me/919810875683?text=${encodeURIComponent(
+                    `Hi Sagar, my UTR is ${txnId}. Please share my pass details.`,
+                  )}`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-5 rounded-full bg-white text-black font-bold uppercase tracking-wider text-xs flex items-center gap-2"
+                >
+                  Contact Sagar on WhatsApp
+                  <ArrowRight size={14} />
+                </motion.a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <div className="mt-12 text-center">
+          <p className="text-xs text-white/80 flex items-center justify-center gap-2 font-medium">
+            <HelpCircle size={14} className="text-emerald-400" />
+            Questions about payments? Reach us at{' '}
+            <a
+              href="mailto:Sagarmasand9@gmail.com"
+              className="text-white hover:text-emerald-400 underline font-bold"
+            >
+              Sagarmasand9@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default EventRegistration;
