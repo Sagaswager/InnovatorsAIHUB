@@ -69,9 +69,11 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
               onClick={() => handleLinkClick('home')}
               className="flex items-center group outline-none"
             >
-              <span className="text-base md:text-lg font-bold tracking-[0.2em] font-sora text-white select-none transition-all group-hover:text-blue-400">
-                Innovators AI HUB
-              </span>
+              <img 
+                src="/logo.png" 
+                alt="Innovators AI HUB" 
+                className="h-16 md:h-24 w-auto object-contain transition-all duration-300 group-hover:opacity-80" 
+              />
             </button>
           </div>
 
@@ -170,9 +172,11 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
             >
               {/* Drawer Header */}
               <div className="flex items-center justify-between">
-                <span className="text-sm font-bold tracking-[0.2em] uppercase font-sora text-white select-none">
-                  Innovators AI HUB
-                </span>
+                <img 
+                  src="/logo.png" 
+                  alt="Innovators AI HUB" 
+                  className="h-12 md:h-16 w-auto object-contain select-none" 
+                />
                 
                 {/* Close Button */}
                 <motion.button

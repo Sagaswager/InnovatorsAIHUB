@@ -23,9 +23,11 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode, currentPage, navigateTo }) 
           onClick={() => navigateTo?.('home')}
           className="flex items-center gap-4 group outline-none"
         >
-          <span className="text-base md:text-lg font-bold tracking-[0.2em] font-sora text-white transition-all group-hover:text-blue-400">
-            Innovators AI HUB
-          </span>
+          <img 
+            src="/logo.png" 
+            alt="Innovators AI HUB" 
+            className="h-16 md:h-24 w-auto object-contain transition-all duration-300 group-hover:opacity-80" 
+          />
         </button>
 
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10 text-[10px] font-bold tracking-[0.4em] uppercase">
