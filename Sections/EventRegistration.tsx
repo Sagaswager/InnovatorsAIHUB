@@ -34,7 +34,7 @@ interface EventRegistrationProps {
 }
 
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbzNeX0d3ucPSeAydnFkTUkNejmTdzQc7A8ez6bcX-PYJpnaSfmWLu37x97SxosTx1y7TQ/exec';
+  'https://script.google.com/macros/s/AKfycbw__tHvZ9Oq696waRmkNuYQuVAWnxuKj86iLOQAbzm0lMAe4R4dBYukVj_iXSDdD-zYpQ/exec';
 
 const countryCodes = [
   { code: '+91', name: 'IN (+91)' },
@@ -167,11 +167,9 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
       contactNumber: fullPhoneNumber,
       subject: 'AI for Business (Form Submitted - Pending Payment)',
       location: formData.city,
-      message: `Company: ${formData.company} | Designation: ${
-        formData.designation
-      } | Price: ₹899 | WhatsApp Updates: ${
-        formData.whatsappConsent ? 'Yes' : 'No'
-      }`,
+      message: `Company: ${formData.company} | Designation: ${formData.designation
+        } | Price: ₹899 | WhatsApp Updates: ${formData.whatsappConsent ? 'Yes' : 'No'
+        }`,
     };
 
     try {
@@ -270,15 +268,13 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
   };
 
   const getInputStyle = (fieldName: string) =>
-    `relative flex items-center rounded-2xl border transition-all duration-300 px-4 py-3.5 bg-zinc-950/40 ${
-      focused === fieldName
-        ? 'border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.06)] bg-zinc-950/60'
-        : 'border-zinc-800/80 hover:border-zinc-700/40'
+    `relative flex items-center rounded-2xl border transition-all duration-300 px-4 py-3.5 bg-zinc-950/40 ${focused === fieldName
+      ? 'border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.06)] bg-zinc-950/60'
+      : 'border-zinc-800/80 hover:border-zinc-700/40'
     }`;
 
   const getLabelStyle = (fieldName: string) =>
-    `text-[10px] font-bold uppercase tracking-[0.25em] mb-2 block transition-colors duration-300 ${
-      focused === fieldName ? 'text-emerald-400' : 'text-emerald-300'
+    `text-[10px] font-bold uppercase tracking-[0.25em] mb-2 block transition-colors duration-300 ${focused === fieldName ? 'text-emerald-400' : 'text-emerald-300'
     }`;
 
   return (
@@ -334,11 +330,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                       <User
                         size={18}
                         strokeWidth={1.5}
-                        className={`mr-3.5 shrink-0 ${
-                          focused === 'name'
+                        className={`mr-3.5 shrink-0 ${focused === 'name'
                             ? 'text-emerald-400'
                             : 'text-zinc-400'
-                        }`}
+                          }`}
                       />
                       <input
                         required
@@ -362,11 +357,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                       <Mail
                         size={18}
                         strokeWidth={1.5}
-                        className={`mr-3.5 shrink-0 ${
-                          focused === 'email'
+                        className={`mr-3.5 shrink-0 ${focused === 'email'
                             ? 'text-emerald-400'
                             : 'text-zinc-400'
-                        }`}
+                          }`}
                       />
                       <input
                         required
@@ -412,11 +406,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                         <Phone
                           size={18}
                           strokeWidth={1.5}
-                          className={`mr-3.5 shrink-0 ${
-                            focused === 'phone'
+                          className={`mr-3.5 shrink-0 ${focused === 'phone'
                               ? 'text-emerald-400'
                               : 'text-zinc-400'
-                          }`}
+                            }`}
                         />
                         <input
                           required
@@ -443,11 +436,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                       <Building2
                         size={18}
                         strokeWidth={1.5}
-                        className={`mr-3.5 shrink-0 ${
-                          focused === 'company'
+                        className={`mr-3.5 shrink-0 ${focused === 'company'
                             ? 'text-emerald-400'
                             : 'text-zinc-400'
-                        }`}
+                          }`}
                       />
                       <input
                         required
@@ -471,11 +463,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                       <Briefcase
                         size={18}
                         strokeWidth={1.5}
-                        className={`mr-3.5 shrink-0 ${
-                          focused === 'designation'
+                        className={`mr-3.5 shrink-0 ${focused === 'designation'
                             ? 'text-emerald-400'
                             : 'text-zinc-400'
-                        }`}
+                          }`}
                       />
                       <input
                         required
@@ -497,11 +488,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                       <Map
                         size={18}
                         strokeWidth={1.5}
-                        className={`mr-3.5 shrink-0 ${
-                          focused === 'city'
+                        className={`mr-3.5 shrink-0 ${focused === 'city'
                             ? 'text-emerald-400'
                             : 'text-zinc-400'
-                        }`}
+                          }`}
                       />
                       <input
                         required
@@ -833,11 +823,10 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                       <QrCode
                         size={18}
                         strokeWidth={1.5}
-                        className={`mr-3.5 shrink-0 ${
-                          focused === 'txnId'
+                        className={`mr-3.5 shrink-0 ${focused === 'txnId'
                             ? 'text-emerald-400'
                             : 'text-zinc-400'
-                        }`}
+                          }`}
                       />
 
                       <input
