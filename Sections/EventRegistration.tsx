@@ -34,7 +34,7 @@ interface EventRegistrationProps {
 }
 
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbw__tHvZ9Oq696waRmkNuYQuVAWnxuKj86iLOQAbzm0lMAe4R4dBYukVj_iXSDdD-zYpQ/exec';
+  'https://script.google.com/macros/s/AKfycbwpxd3tId9ENfEvpd3Qpt9bc5g1WKCLwUfroFxrqgl34384NtDApaocCDUL9iLjKDO8_w/exec';
 
 const countryCodes = [
   { code: '+91', name: 'IN (+91)' },
@@ -331,8 +331,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                         size={18}
                         strokeWidth={1.5}
                         className={`mr-3.5 shrink-0 ${focused === 'name'
-                            ? 'text-emerald-400'
-                            : 'text-zinc-400'
+                          ? 'text-emerald-400'
+                          : 'text-zinc-400'
                           }`}
                       />
                       <input
@@ -358,8 +358,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                         size={18}
                         strokeWidth={1.5}
                         className={`mr-3.5 shrink-0 ${focused === 'email'
-                            ? 'text-emerald-400'
-                            : 'text-zinc-400'
+                          ? 'text-emerald-400'
+                          : 'text-zinc-400'
                           }`}
                       />
                       <input
@@ -407,8 +407,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                           size={18}
                           strokeWidth={1.5}
                           className={`mr-3.5 shrink-0 ${focused === 'phone'
-                              ? 'text-emerald-400'
-                              : 'text-zinc-400'
+                            ? 'text-emerald-400'
+                            : 'text-zinc-400'
                             }`}
                         />
                         <input
@@ -437,8 +437,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                         size={18}
                         strokeWidth={1.5}
                         className={`mr-3.5 shrink-0 ${focused === 'company'
-                            ? 'text-emerald-400'
-                            : 'text-zinc-400'
+                          ? 'text-emerald-400'
+                          : 'text-zinc-400'
                           }`}
                       />
                       <input
@@ -464,8 +464,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                         size={18}
                         strokeWidth={1.5}
                         className={`mr-3.5 shrink-0 ${focused === 'designation'
-                            ? 'text-emerald-400'
-                            : 'text-zinc-400'
+                          ? 'text-emerald-400'
+                          : 'text-zinc-400'
                           }`}
                       />
                       <input
@@ -489,8 +489,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                         size={18}
                         strokeWidth={1.5}
                         className={`mr-3.5 shrink-0 ${focused === 'city'
-                            ? 'text-emerald-400'
-                            : 'text-zinc-400'
+                          ? 'text-emerald-400'
+                          : 'text-zinc-400'
                           }`}
                       />
                       <input
@@ -824,8 +824,8 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                         size={18}
                         strokeWidth={1.5}
                         className={`mr-3.5 shrink-0 ${focused === 'txnId'
-                            ? 'text-emerald-400'
-                            : 'text-zinc-400'
+                          ? 'text-emerald-400'
+                          : 'text-zinc-400'
                           }`}
                       />
 
