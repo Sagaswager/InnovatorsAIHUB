@@ -34,7 +34,7 @@ interface EventRegistrationProps {
 }
 
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbwpxd3tId9ENfEvpd3Qpt9bc5g1WKCLwUfroFxrqgl34384NtDApaocCDUL9iLjKDO8_w/exec';
+  'https://script.google.com/macros/s/AKfycbzbfealrHual7OTQ2wLokW8Sn1FVzfMVWAH108KiUjJvAKBlPVRxTuiACgKWtBQZH7GiA/exec';
 
 const countryCodes = [
   { code: '+91', name: 'IN (+91)' },
