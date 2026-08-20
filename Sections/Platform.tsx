@@ -14,7 +14,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
     <section className="bg-white min-h-screen w-full relative select-none font-sans overflow-hidden">
       
       {/* Top Left Brand / Back navigation */}
-      <div className="absolute top-6 left-8 z-50">
+      <div className="absolute top-2 left-6 z-50">
         <button
           onClick={() => navigateTo?.('home')}
           className="flex items-center group focus:outline-none"
