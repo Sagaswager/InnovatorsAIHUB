@@ -250,13 +250,8 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 </div>
               </a>
 
-              {/* Whitish snow/shadow layers at the hands side to merge with background */}
-              <div className="absolute bottom-1 left-[15%] w-10 h-10 rounded-full bg-white/80 blur-sm z-20" />
-              <div className="absolute bottom-0 right-[15%] w-12 h-12 rounded-full bg-white/90 blur-md z-20" />
-              <div className="absolute -bottom-2 left-[35%] w-28 h-12 rounded-full bg-white/95 blur-md z-20" />
-
-              {/* Whitish gradient overlay to merge bottom dark vignetted edge with the white background */}
-              <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none z-10" />
+              {/* Subtle whitish gradient overlay at the very bottom edge to blend the crop line smoothly */}
+              <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
             </div>
           </div>
         </div>
