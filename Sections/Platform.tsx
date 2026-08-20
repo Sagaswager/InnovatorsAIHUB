@@ -229,14 +229,24 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 className="w-full h-auto object-contain"
               />
 
-              {/* Founder Label at the tip of the arrow */}
-              <div 
-                className="absolute top-[52%] left-[10%] md:left-[12%] -translate-y-1/2 z-20 flex flex-col items-start bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-zinc-200/50 shadow-[0_4px_12px_rgba(0,0,0,0.05)] pointer-events-auto"
+              {/* Founder Label just below the tip of the arrow (Clickable LinkedIn Link) */}
+              <a 
+                href="https://www.linkedin.com/in/sagarmasand1/"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="absolute top-[57%] left-[10%] md:left-[12%] -translate-y-1/2 z-20 flex items-center gap-2 bg-white/90 hover:bg-white backdrop-blur-md px-3.5 py-2 rounded-xl border border-zinc-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:scale-[1.03] transition-all duration-200 pointer-events-auto cursor-pointer"
                 style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
               >
-                <span className="text-xs font-bold text-zinc-900 leading-none">Sagar</span>
-                <span className="text-[9px] text-zinc-500 font-semibold tracking-wider uppercase mt-1">Founder</span>
-              </div>
+                {/* LinkedIn Brand Icon */}
+                <div className="text-[#0A66C2] flex items-center justify-center">
+                  <Linkedin size={15} fill="#0A66C2" />
+                </div>
+                
+                <div className="flex flex-col items-start leading-none">
+                  <span className="text-xs font-bold text-zinc-900 leading-none">Sagar</span>
+                  <span className="text-[9px] text-zinc-500 font-semibold tracking-wider uppercase mt-1">Founder</span>
+                </div>
+              </a>
 
               {/* Whitish snow/shadow layers at the hands side to merge with background */}
               <div className="absolute bottom-1 left-[15%] w-10 h-10 rounded-full bg-white/80 blur-sm z-20" />
