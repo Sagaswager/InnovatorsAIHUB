@@ -14,17 +14,16 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
     <section className="bg-white min-h-screen w-full relative select-none font-sans overflow-hidden">
       
       {/* Top Left Brand / Back navigation */}
-      <div className="absolute top-6 left-8 z-50">
+      <div className="absolute top-5 left-6 z-50">
         <button
           onClick={() => navigateTo?.('home')}
-          className="flex items-center gap-2 group focus:outline-none"
+          className="flex items-center group focus:outline-none bg-zinc-950 px-4 py-2.5 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:bg-zinc-900 transition-all duration-200"
         >
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-indigo-500/20 group-hover:scale-105 active:scale-95 transition-all">
-            iA
-          </div>
-          <span className="text-xs font-bold uppercase tracking-wider text-zinc-700 group-hover:text-zinc-950 transition-colors">
-            Innovators AI HUB
-          </span>
+          <img 
+            src="/logo.png" 
+            alt="Innovators AI HUB Logo" 
+            className="h-6 md:h-8 w-auto object-contain transition-all duration-300 group-hover:opacity-90" 
+          />
         </button>
       </div>
 
