@@ -314,14 +314,14 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 </span>
               </h1>
 
-              {/* Line 2: AI Agent Co-Worker (Size improved by 2K standard/large ratio) */}
+              {/* Line 2: AI Agent Co-Worker (Sized to fit on a single line) */}
               <h2 
                 style={{ 
                   color: '#000000',
                   fontWeight: 800,
-                  fontSize: 'clamp(2.2rem, 5.2vw, 4.2rem)'
+                  fontSize: 'clamp(1.6rem, 3.8vw, 3.2rem)'
                 }}
-                className="mt-4 leading-tight tracking-tight"
+                className="mt-4 leading-tight tracking-tight whitespace-nowrap"
               >
                 AI Agent Co-Worker
               </h2>
