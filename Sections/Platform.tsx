@@ -229,18 +229,20 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 className="w-full h-auto object-contain"
               />
 
-              {/* Founder Label just below the tip of the arrow (Clickable LinkedIn Link) */}
+              {/* Founder Label in front/below the tip of the arrow (Clickable LinkedIn Link) */}
               <a 
                 href="https://www.linkedin.com/in/sagarmasand1/"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="absolute top-[57%] left-[10%] md:left-[12%] -translate-y-1/2 z-20 flex items-center gap-2 bg-white/90 hover:bg-white backdrop-blur-md px-3.5 py-2 rounded-xl border border-zinc-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:scale-[1.03] transition-all duration-200 pointer-events-auto cursor-pointer"
+                className="absolute top-[58%] left-[2%] md:left-[5%] -translate-y-1/2 z-20 flex items-center gap-2.5 bg-white/95 hover:bg-white backdrop-blur-md px-3.5 py-2 rounded-xl border border-zinc-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:scale-[1.03] transition-all duration-200 pointer-events-auto cursor-pointer"
                 style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
               >
-                {/* LinkedIn Brand Icon */}
-                <div className="text-[#0A66C2] flex items-center justify-center">
-                  <Linkedin size={15} fill="#0A66C2" />
-                </div>
+                {/* Real LinkedIn logo image */}
+                <img 
+                  src="/linkedin_logo.png" 
+                  alt="LinkedIn Logo" 
+                  className="w-5 h-5 object-contain rounded"
+                />
                 
                 <div className="flex flex-col items-start leading-none">
                   <span className="text-xs font-bold text-zinc-900 leading-none">Sagar</span>
