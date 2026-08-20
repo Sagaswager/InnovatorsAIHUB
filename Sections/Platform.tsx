@@ -221,13 +221,28 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
             {/* Soft creative background gradient highlights behind the image */}
             <div className="absolute top-1/2 left-1/2 md:left-auto md:right-12 -translate-x-1/2 md:translate-x-0 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-tr from-green-100/35 to-indigo-100/35 blur-3xl -z-10" />
             
-            {/* Image Wrapper with Bottom White Fade Overlay */}
+            {/* Image Wrapper with Bottom White Fade Overlay & Founder Tag */}
             <div className="relative flex justify-center items-end max-w-[450px] md:max-w-[540px] lg:max-w-[620px] w-full overflow-hidden">
               <img 
                 src="/platform_hero.png" 
                 alt="AI Co-Worker Platform Hero" 
                 className="w-full h-auto object-contain"
               />
+
+              {/* Founder Label at the tip of the arrow */}
+              <div 
+                className="absolute top-[52%] left-[10%] md:left-[12%] -translate-y-1/2 z-20 flex flex-col items-start bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-zinc-200/50 shadow-[0_4px_12px_rgba(0,0,0,0.05)] pointer-events-auto"
+                style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
+              >
+                <span className="text-xs font-bold text-zinc-900 leading-none">Sagar</span>
+                <span className="text-[9px] text-zinc-500 font-semibold tracking-wider uppercase mt-1">Founder</span>
+              </div>
+
+              {/* Whitish snow/shadow layers at the hands side to merge with background */}
+              <div className="absolute bottom-1 left-[15%] w-10 h-10 rounded-full bg-white/80 blur-sm z-20" />
+              <div className="absolute bottom-0 right-[15%] w-12 h-12 rounded-full bg-white/90 blur-md z-20" />
+              <div className="absolute -bottom-2 left-[35%] w-28 h-12 rounded-full bg-white/95 blur-md z-20" />
+
               {/* Whitish gradient overlay to merge bottom dark vignetted edge with the white background */}
               <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none z-10" />
             </div>
