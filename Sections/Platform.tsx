@@ -241,7 +241,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 <img 
                   src="/linkedin_logo.png" 
                   alt="LinkedIn Logo" 
-                  className="w-5 h-5 object-contain rounded"
+                  className="w-7 h-7 object-contain rounded"
                 />
                 
                 <div className="flex flex-col items-start leading-none">
