@@ -23,7 +23,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
             src="/logo.png" 
             alt="Innovators AI HUB Logo" 
             style={{ filter: 'brightness(0)' }}
-            className="h-10 md:h-14 w-auto object-contain transition-all duration-300 group-hover:opacity-80" 
+            className="h-14 md:h-20 w-auto object-contain transition-all duration-300 group-hover:opacity-80" 
           />
         </button>
       </div>
