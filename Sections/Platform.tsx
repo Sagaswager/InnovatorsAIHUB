@@ -302,7 +302,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                   <span>1</span>
                   <span 
                     style={{ 
-                      fontSize: '0.3em', 
+                      fontSize: '0.15em', 
                       fontWeight: 700,
                       lineHeight: 1.1,
                       marginLeft: '0.05em',
