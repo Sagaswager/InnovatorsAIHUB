@@ -266,13 +266,13 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
               style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
               className="flex flex-col items-start select-text"
             >
-              {/* Line 1: Rent your 1st */}
+              {/* Line 1: Rent your 1st (Sizes improved by 2K standard/large ratio) */}
               <h1 className="flex items-baseline flex-nowrap whitespace-nowrap leading-none">
                 <span 
                   style={{ 
                     color: '#000000', 
-                    fontWeight: 700,
-                    fontSize: 'clamp(2rem, 5vw, 4rem)'
+                    fontWeight: 800,
+                    fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)'
                   }}
                   className="mr-3 md:mr-4"
                 >
@@ -282,7 +282,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                   style={{ 
                     color: '#000000',
                     fontWeight: 500,
-                    fontSize: 'clamp(1rem, 2.5vw, 2rem)'
+                    fontSize: 'clamp(1.4rem, 3vw, 2.5rem)'
                   }}
                   className="mr-3 md:mr-5"
                 >
@@ -291,8 +291,8 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 <span 
                   style={{ 
                     color: '#95d656', 
-                    fontWeight: 800,
-                    fontSize: 'clamp(4rem, 10vw, 8rem)',
+                    fontWeight: 900,
+                    fontSize: 'clamp(5.5rem, 13vw, 10.5rem)',
                     display: 'inline-flex',
                     alignItems: 'flex-start',
                     lineHeight: 1
@@ -303,7 +303,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                   <span 
                     style={{ 
                       fontSize: '0.3em', 
-                      fontWeight: 600,
+                      fontWeight: 700,
                       lineHeight: 1.1,
                       marginLeft: '0.05em',
                       paddingTop: '0.22em'
@@ -314,14 +314,14 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 </span>
               </h1>
 
-              {/* Line 2: AI Agent Co-Worker */}
+              {/* Line 2: AI Agent Co-Worker (Size improved by 2K standard/large ratio) */}
               <h2 
                 style={{ 
                   color: '#000000',
-                  fontWeight: 600,
-                  fontSize: 'clamp(1.5rem, 3.75vw, 3rem)'
+                  fontWeight: 800,
+                  fontSize: 'clamp(2.2rem, 5.2vw, 4.2rem)'
                 }}
-                className="mt-3 md:mt-4 leading-tight tracking-tight"
+                className="mt-4 leading-tight tracking-tight"
               >
                 AI Agent Co-Worker
               </h2>
@@ -414,7 +414,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="bg-white/70 border border-white/30 backdrop-blur-xl rounded-[28px] shadow-[0_20px_50px_rgba(0,0,0,0.08)] p-6 md:p-8 max-w-md w-full relative z-50 text-left"
+              className="bg-white/90 border border-white/40 backdrop-blur-xl rounded-[28px] shadow-[0_20px_50px_rgba(0,0,0,0.08)] p-6 md:p-8 max-w-md w-full relative z-50 text-left"
             >
               {/* Close Button */}
               <button 
@@ -446,83 +446,84 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 {modalMode === 'register' ? (
                   <>
                     <div>
-                      <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Name</label>
+                      <label className="block text-[10px] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">Name</label>
                       <input 
                         type="text" 
                         required
                         value={name}
                         onChange={e => setName(e.target.value)}
                         placeholder="e.g. Sagar"
-                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-200/80 bg-white/50 focus:bg-white focus:border-zinc-400 text-sm outline-none transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 bg-white text-zinc-950 placeholder-zinc-400 focus:border-zinc-500 text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Email (Mail)</label>
+                      <label className="block text-[10px] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">Email (Mail)</label>
                       <input 
                         type="email" 
                         required
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         placeholder="sagar@example.com"
-                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-200/80 bg-white/50 focus:bg-white focus:border-zinc-400 text-sm outline-none transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 bg-white text-zinc-950 placeholder-zinc-400 focus:border-zinc-500 text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Number</label>
+                      <label className="block text-[10px] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">Number</label>
                       <input 
                         type="tel" 
                         required
                         value={number}
                         onChange={e => setNumber(e.target.value)}
                         placeholder="+91 XXXXX XXXXX"
-                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-200/80 bg-white/50 focus:bg-white focus:border-zinc-400 text-sm outline-none transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 bg-white text-zinc-950 placeholder-zinc-400 focus:border-zinc-500 text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Profession / Role</label>
+                      <label className="block text-[10px] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">Profession / Role</label>
                       <input 
                         type="text" 
                         required
                         value={profession}
                         onChange={e => setProfession(e.target.value)}
                         placeholder="e.g. Founder"
-                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-200/80 bg-white/50 focus:bg-white focus:border-zinc-400 text-sm outline-none transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 bg-white text-zinc-950 placeholder-zinc-400 focus:border-zinc-500 text-sm outline-none transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Company Name</label>
+                      <label className="block text-[10px] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">Company Name</label>
                       <input 
                         type="text" 
                         required
                         value={companyName}
                         onChange={e => setCompanyName(e.target.value)}
                         placeholder="Innovators AI HUB"
-                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-200/80 bg-white/50 focus:bg-white focus:border-zinc-400 text-sm outline-none transition-all"
+                        className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 bg-white text-zinc-950 placeholder-zinc-400 focus:border-zinc-500 text-sm outline-none transition-all"
                       />
                     </div>
                   </>
                 ) : (
                   <div>
-                    <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1.5">Email Address</label>
+                    <label className="block text-[10px] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">Email Address</label>
                     <input 
                       type="email" 
                       required
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       placeholder="sagar@example.com"
-                      className="w-full px-4 py-2.5 rounded-xl border border-zinc-200/80 bg-white/50 focus:bg-white focus:border-zinc-400 text-sm outline-none transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-zinc-300 bg-white text-zinc-950 placeholder-zinc-400 focus:border-zinc-500 text-sm outline-none transition-all"
                     />
                   </div>
                 )}
 
+                {/* Primary Action Button (Submit/Create Account) */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full mt-2 py-3 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 outline-none disabled:opacity-50"
+                  className="w-full mt-4 py-3 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 outline-none disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <>
@@ -530,34 +531,22 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                       <span>Saving to Sheet...</span>
                     </>
                   ) : (
-                    <span>{modalMode === 'register' ? 'Submit & Create Account' : 'Verify Email'}</span>
+                    <span>{modalMode === 'register' ? 'Submit & Create Account' : 'Verify Email & Sign In'}</span>
                   )}
                 </button>
-              </form>
 
-              <div className="mt-5 pt-4 border-t border-zinc-200/40 text-center">
-                {modalMode === 'register' ? (
-                  <button 
-                    onClick={() => {
-                      setSubmitError('');
-                      setModalMode('login');
-                    }}
-                    className="text-[11px] font-semibold text-zinc-500 hover:text-zinc-950 transition-colors"
-                  >
-                    Already have an account? <span className="text-indigo-600 font-bold underline">Sign In</span>
-                  </button>
-                ) : (
-                  <button 
-                    onClick={() => {
-                      setSubmitError('');
-                      setModalMode('register');
-                    }}
-                    className="text-[11px] font-semibold text-zinc-500 hover:text-zinc-950 transition-colors"
-                  >
-                    Don't have an account yet? <span className="text-indigo-600 font-bold underline">Get Started</span>
-                  </button>
-                )}
-              </div>
+                {/* Secondary Button just below primary action button */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSubmitError('');
+                    setModalMode(modalMode === 'register' ? 'login' : 'register');
+                  }}
+                  className="w-full py-3 rounded-xl border border-zinc-200 hover:bg-zinc-50 text-zinc-800 text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 outline-none mt-2"
+                >
+                  {modalMode === 'register' ? 'Sign In instead' : 'Create Account / Get Started'}
+                </button>
+              </form>
 
             </motion.div>
           </div>
