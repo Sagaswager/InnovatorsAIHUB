@@ -184,9 +184,10 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 style={{ 
                   fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                   fontWeight: 600,
-                  color: '#000000',
+                  backgroundColor: '#000000',
+                  color: '#ffffff'
                 }}
-                className="px-5 py-2.5 rounded-xl text-xs md:text-sm tracking-wide bg-white border border-zinc-200 shadow-[0_4px_0_0_rgba(228,228,231,1),0_4px_6px_-1px_rgba(0,0,0,0.1)] active:shadow-none active:translate-y-1 transition-all cursor-default outline-none"
+                className="px-5 py-2.5 rounded-xl text-xs md:text-sm tracking-wide shadow-md hover:bg-zinc-900 active:scale-95 transition-all cursor-default outline-none border border-zinc-800"
               >
                 Starts at ₹999/mo
               </button>
@@ -198,21 +199,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
             Instantly scale your operations with autonomous, pre-trained AI agents that seamlessly integrate into WhatsApp, LinkedIn, and voice workflows.
           </p>
 
-          {/* Action Buttons (Neumorphic Design style) */}
-          <div className="flex flex-wrap gap-4 pt-2">
-            <button 
-              onClick={() => navigateTo?.('services')}
-              className="px-6 py-3.5 rounded-2xl bg-white text-xs font-bold text-indigo-600 uppercase tracking-wider border border-zinc-100 shadow-[4px_4px_10px_rgba(0,0,0,0.05),_-4px_-4px_10px_rgba(255,255,255,0.9)] hover:shadow-[2px_2px_5px_rgba(0,0,0,0.05),_-2px_-2px_5px_rgba(255,255,255,0.9)] hover:bg-zinc-50 active:shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),_inset_-2px_-2px_5px_rgba(255,255,255,0.8)] transition-all duration-200 outline-none"
-            >
-              Get Stated
-            </button>
-            <button 
-              onClick={() => navigateTo?.('contact')}
-              className="px-6 py-3.5 rounded-2xl bg-zinc-900 text-xs font-bold text-white uppercase tracking-wider hover:bg-zinc-800 transition-all duration-200 shadow-md shadow-zinc-900/10 outline-none"
-            >
-              Request Custom Agent
-            </button>
-          </div>
+
         </div>
 
         {/* Right Side: Hero Image Showcase */}
@@ -229,23 +216,23 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 className="w-full h-auto object-contain"
               />
 
-              {/* Founder Label in front/below the tip of the arrow (Clickable LinkedIn Link) */}
+              {/* Founder Label just below the tip of the arrow (Clickable LinkedIn Link) */}
               <a 
                 href="https://www.linkedin.com/in/sagarmasand1/"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="absolute top-[58%] left-[2%] md:left-[5%] -translate-y-1/2 z-20 flex items-center gap-2.5 bg-white/95 hover:bg-white backdrop-blur-md px-3.5 py-2 rounded-xl border border-zinc-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:scale-[1.03] transition-all duration-200 pointer-events-auto cursor-pointer"
+                className="absolute top-[66%] left-[3%] md:left-[6%] -translate-y-1/2 z-20 flex items-center gap-3 bg-white/95 hover:bg-white backdrop-blur-md p-1 pr-4 rounded-2xl border border-zinc-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:scale-[1.03] transition-all duration-200 pointer-events-auto cursor-pointer"
                 style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
               >
                 {/* Real LinkedIn logo image */}
                 <img 
                   src="/linkedin_logo.png" 
                   alt="LinkedIn Logo" 
-                  className="w-7 h-7 object-contain rounded"
+                  className="w-10 h-10 object-contain rounded-xl"
                 />
                 
-                <div className="flex flex-col items-start leading-none">
-                  <span className="text-xs font-bold text-zinc-900 leading-none">Sagar</span>
+                <div className="flex flex-col items-start leading-none pr-1">
+                  <span className="text-[13px] font-bold text-zinc-900 leading-none">Sagar</span>
                   <span className="text-[9px] text-zinc-500 font-semibold tracking-wider uppercase mt-1">Founder</span>
                 </div>
               </a>
