@@ -14,10 +14,11 @@ import AgentTeams from './Sections/AgentTeams';
 import CustomAgentModal from './Sections/CustomAgentModal';
 import CustomAgentBanner from './Sections/CustomAgentBanner';
 import EventRegistration from './Sections/EventRegistration';
+import Platform from './Sections/Platform';
 
 const App: React.FC = () => {
   const [isDarkMode] = useState(true);
-  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform'>('home');
   const [selectedAgents, setSelectedAgents] = useState<string[]>([]);
   const [customDescriptions, setCustomDescriptions] = useState<Record<string, string>>({});
   const [isCustomModalOpen, setIsCustomModalOpen] = useState(false);
@@ -45,7 +46,7 @@ const App: React.FC = () => {
     }
   };
 
-  const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register') => {
+  const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform') => {
     setCurrentPage(page);
     const path = page === 'home' ? '/' : `/${page}`;
     window.history.pushState({ page }, '', path);
@@ -58,7 +59,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'home';
-      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact' || path === 'register') {
+      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact' || path === 'register' || path === 'platform') {
         setCurrentPage(path as any);
       }
     };
@@ -85,7 +86,7 @@ const App: React.FC = () => {
         description = 'Explore our portfolio of AI brand films, autonomous agent setups, and advanced automation workflows built by Innovators AI HUB.';
         break;
       case 'services':
-        title = 'Hire AI Agents & Teams | Services | Innovators AI HUB';
+        title = 'Rent AI Co-worker Agents & Teams | Services | Innovators AI HUB';
         description = 'Browse and hire from our pre-trained AI agent catalog: WhatsApp AI bots, outbound voice calling agents, LinkedIn outreach agents, and custom teams.';
         break;
       case 'contact':
@@ -177,12 +178,14 @@ const App: React.FC = () => {
         )}
       </AnimatePresence>
 
-      <Header 
-        isDarkMode={isDarkMode} 
-        currentPage={currentPage}
-        navigateTo={navigateTo}
-        selectedAgents={selectedAgents}
-      />
+      {currentPage !== 'platform' && (
+        <Header 
+          isDarkMode={isDarkMode} 
+          currentPage={currentPage}
+          navigateTo={navigateTo}
+          selectedAgents={selectedAgents}
+        />
+      )}
       
       <main className="relative">
         <AnimatePresence mode="wait">
@@ -224,15 +227,15 @@ const App: React.FC = () => {
             </motion.div>
           )}
 
-          {currentPage === 'portfolio' && (
+          {currentPage === 'platform' && (
             <motion.div
-              key="portfolio"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              key="platform-page"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.02 }}
               transition={{ duration: 0.5 }}
             >
-              <Port isDarkMode={isDarkMode} />
+              <Platform isDarkMode={isDarkMode} navigateTo={navigateTo} />
             </motion.div>
           )}
 
@@ -287,7 +290,9 @@ const App: React.FC = () => {
           )}
         </AnimatePresence>
       </main>
-      <Footer isDarkMode={isDarkMode} currentPage={currentPage} navigateTo={navigateTo} />
+      {currentPage !== 'platform' && (
+        <Footer isDarkMode={isDarkMode} currentPage={currentPage as any} navigateTo={navigateTo} />
+      )}
 
       {/* Floating Chat/Social Buttons */}
       <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex flex-col items-center gap-3 select-none pointer-events-none">

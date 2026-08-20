@@ -299,6 +299,34 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                 </h1>
               </div>
 
+              <div className="max-w-md mx-auto mb-8 p-5 rounded-2xl border border-emerald-500/20 bg-emerald-950/20 backdrop-blur-md">
+                <div className="flex justify-between items-center mb-2.5 text-xs">
+                  <span className="font-semibold text-emerald-300">
+                    Registration Status
+                  </span>
+
+                  <span className="font-bold text-white uppercase tracking-wider">
+                    Only {seatsLeft} Seats Left!
+                  </span>
+                </div>
+
+                <div className="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden border border-white/10">
+                  <motion.div
+                    initial={{ width: '0%' }}
+                    animate={{
+                      width: `${((70 - seatsLeft) / 70) * 100}%`,
+                    }}
+                    transition={{ duration: 1.2, ease: 'easeOut' }}
+                    className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 rounded-full"
+                  />
+                </div>
+
+                <p className="text-[10px] text-white/80 text-left mt-2 font-medium uppercase tracking-wider">
+                  {70 - seatsLeft} / 70 slots already reserved by elite
+                  founders
+                </p>
+              </div>
+
               {/* FOUNDER DETAILS FORM */}
               <div className="bg-zinc-900/40 backdrop-blur-2xl border border-zinc-800/80 hover:border-zinc-700/60 shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-[2.5rem] p-8 md:p-12 transition-colors duration-500 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-48 h-48 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none z-0" />
@@ -680,33 +708,7 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
                   </div>
                 </div>
 
-                <div className="max-w-md mx-auto p-5 rounded-2xl border border-emerald-500/20 bg-emerald-950/20 backdrop-blur-md">
-                  <div className="flex justify-between items-center mb-2.5 text-xs">
-                    <span className="font-semibold text-emerald-300">
-                      Registration Status
-                    </span>
 
-                    <span className="font-bold text-white uppercase tracking-wider">
-                      Only {seatsLeft} Seats Left!
-                    </span>
-                  </div>
-
-                  <div className="w-full h-1.5 bg-zinc-900 rounded-full overflow-hidden border border-white/10">
-                    <motion.div
-                      initial={{ width: '0%' }}
-                      animate={{
-                        width: `${((70 - seatsLeft) / 70) * 100}%`,
-                      }}
-                      transition={{ duration: 1.2, ease: 'easeOut' }}
-                      className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-400 rounded-full"
-                    />
-                  </div>
-
-                  <p className="text-[10px] text-white/80 text-left mt-2 font-medium uppercase tracking-wider">
-                    {70 - seatsLeft} / 70 slots already reserved by elite
-                    founders
-                  </p>
-                </div>
               </div>
             </motion.div>
           )}

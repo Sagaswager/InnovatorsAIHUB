@@ -6,8 +6,8 @@ import { trackEvent } from '../analytics';
 
 interface HeaderProps {
   isDarkMode: boolean;
-  currentPage: 'home' | 'portfolio' | 'services' | 'contact' | 'register';
-  navigateTo: (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register') => void;
+  currentPage: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform';
+  navigateTo: (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform') => void;
   selectedAgents?: string[];
 }
 
@@ -37,15 +37,15 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
     ['24px 0px', '16px 0px']
   );
 
-  const navItems: { label: string; page: 'home' | 'portfolio' | 'services' | 'contact' | 'register'; type: 'internal' }[] = [
-    { label: 'Studio', page: 'home', type: 'internal' },
-    { label: 'Hire AI', page: 'services', type: 'internal' },
-    { label: 'Portfolio', page: 'portfolio', type: 'internal' },
+  const navItems: { label: string; page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform'; type: 'internal' }[] = [
+    { label: 'HUB', page: 'home', type: 'internal' },
+    { label: 'Platform', page: 'platform', type: 'internal' },
+    { label: 'Rent AI Co-worker', page: 'services', type: 'internal' },
     { label: 'Event', page: 'register', type: 'internal' },
     { label: 'Contact', page: 'contact', type: 'internal' }
   ];
 
-  const handleLinkClick = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register') => {
+  const handleLinkClick = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform') => {
     navigateTo(page);
     setIsMenuOpen(false);
   };
@@ -78,28 +78,27 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-4 text-[11px] font-bold tracking-[0.3em] uppercase">
+          <nav className="hidden lg:flex items-center gap-6 text-[11px] font-bold tracking-[0.2em] uppercase text-white">
             {navItems.map((item) => (
-              <PillButton 
+              <button 
                 key={item.page}
                 onClick={() => handleLinkClick(item.page)}
-                className={`!px-6 !py-3 !text-sm ${
-                  currentPage === item.page ? 'opacity-100 border-white/50 drop-shadow-md' : 'opacity-95 hover:opacity-100'
+                className={`transition-colors ${
+                  currentPage === item.page ? 'drop-shadow-md' : ''
                 }`}
               >
                 {item.label}
-              </PillButton>
+              </button>
             ))}
-            <PillButton 
-              as="a"
+            <a 
               id="header-linkedin-agent-link"
               href="https://innovatorslinai.duckdns.org/dashboard.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="!px-6 !py-3 !text-sm opacity-95 hover:opacity-100"
+              className="transition-colors"
             >
               Linkedin AI Agent
-            </PillButton>
+            </a>
           </nav>
 
           {/* Header Actions (Right) */}

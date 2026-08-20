@@ -147,6 +147,59 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
         }
       `}</style>
 
+      {/* Agent Catalog (Shown on full page Services/Hire AI) */}
+      {isFullPage && (
+        <div className="mb-20">
+          <div className="text-center mb-10">
+            <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">AI Agent Catalog</h3>
+            <p className="text-xs font-light text-white/40 mt-2">Build your workforce with our pre-trained agent models.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {agentsData.map((agent) => {
+              const isAdded = selectedAgents.includes(agent.id);
+              return (
+                <div
+                  key={agent.id}
+                  className="bg-zinc-900/40 border border-white/5 rounded-3xl p-5 flex flex-col justify-between h-full hover:border-blue-500/15 transition-all duration-300 hover:bg-zinc-900/70"
+                >
+                  <div className="text-left">
+                    <div className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center text-blue-400 mb-4">
+                      {agent.icon}
+                    </div>
+                    <h4 className="text-sm font-bold text-white mb-1">{agent.name}</h4>
+                    <p className="text-[11px] font-light text-white/50 leading-relaxed mb-4">{agent.description}</p>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xs font-semibold text-white/70 mb-3">{agent.price}</p>
+                    <button
+                      onClick={() => {
+                        toggleAgent?.(agent.id);
+                        trackEvent('agent_selected', { agent_id: agent.id, agent_name: agent.name, action: isAdded ? 'removed' : 'added', source: 'services_catalog' });
+                      }}
+                      className={`w-full py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all ${
+                        isAdded
+                          ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
+                          : 'bg-white hover:bg-zinc-100 text-zinc-950'
+                      }`}
+                    >
+                      {isAdded ? (
+                        <>
+                          <Check className="w-3.5 h-3.5" /> Added
+                        </>
+                      ) : (
+                        <>
+                          <Plus className="w-3.5 h-3.5" /> Add to Hire
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Interactive Cart Panel */}
       {isFullPage && (
         <div className="mb-16 bg-zinc-900/30 border border-white/5 rounded-3xl p-6 md:p-8 max-w-4xl mx-auto hover:border-blue-500/10 transition-all duration-300">
@@ -170,7 +223,7 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
           {selectedList.length === 0 ? (
             <div className="text-center py-8">
               <p className="text-sm font-light text-white/50">No AI agents selected yet.</p>
-              <p className="text-xs font-light text-white/30 mt-1">Browse the agent catalog below to start building your team.</p>
+              <p className="text-xs font-light text-white/30 mt-1">Browse the agent catalog above to start building your team.</p>
             </div>
           ) : (
             <div className="space-y-6">
@@ -224,59 +277,6 @@ const Services: React.FC<ServicesProps> = ({ isDarkMode, isFullPage = false, sel
               </div>
             </div>
           )}
-        </div>
-      )}
-
-      {/* Agent Catalog (Shown on full page Services/Hire AI) */}
-      {isFullPage && (
-        <div className="mb-20">
-          <div className="text-center mb-10">
-            <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">AI Agent Catalog</h3>
-            <p className="text-xs font-light text-white/40 mt-2">Build your workforce with our pre-trained agent models.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {agentsData.map((agent) => {
-              const isAdded = selectedAgents.includes(agent.id);
-              return (
-                <div
-                  key={agent.id}
-                  className="bg-zinc-900/40 border border-white/5 rounded-3xl p-5 flex flex-col justify-between h-full hover:border-blue-500/15 transition-all duration-300 hover:bg-zinc-900/70"
-                >
-                  <div className="text-left">
-                    <div className="w-10 h-10 rounded-full bg-zinc-950 border border-zinc-800 flex items-center justify-center text-blue-400 mb-4">
-                      {agent.icon}
-                    </div>
-                    <h4 className="text-sm font-bold text-white mb-1">{agent.name}</h4>
-                    <p className="text-[11px] font-light text-white/50 leading-relaxed mb-4">{agent.description}</p>
-                  </div>
-                  <div className="text-left">
-                    <p className="text-xs font-semibold text-white/70 mb-3">{agent.price}</p>
-                    <button
-                      onClick={() => {
-                        toggleAgent?.(agent.id);
-                        trackEvent('agent_selected', { agent_id: agent.id, agent_name: agent.name, action: isAdded ? 'removed' : 'added', source: 'services_catalog' });
-                      }}
-                      className={`w-full py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all ${
-                        isAdded
-                          ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
-                          : 'bg-white hover:bg-zinc-100 text-zinc-950'
-                      }`}
-                    >
-                      {isAdded ? (
-                        <>
-                          <Check className="w-3.5 h-3.5" /> Added
-                        </>
-                      ) : (
-                        <>
-                          <Plus className="w-3.5 h-3.5" /> Add to Hire
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
       )}
 
