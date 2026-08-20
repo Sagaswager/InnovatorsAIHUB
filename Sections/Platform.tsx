@@ -216,7 +216,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
         </div>
 
         {/* Right Side: Hero Image Showcase */}
-        <div className="flex-1 w-full flex justify-center md:justify-end items-center select-none pointer-events-none">
+        <div className="flex-1 w-full flex justify-center md:justify-end items-center select-none pointer-events-none md:-mr-12 lg:-mr-16">
           <div className="relative w-full flex justify-center md:justify-end items-center">
             {/* Soft creative background gradient highlights behind the image */}
             <div className="absolute top-1/2 left-1/2 md:left-auto md:right-12 -translate-x-1/2 md:translate-x-0 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-tr from-green-100/35 to-indigo-100/35 blur-3xl -z-10" />
