@@ -154,11 +154,11 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                   <span>1</span>
                   <span 
                     style={{ 
-                      fontSize: '0.10em', 
+                      fontSize: '0.3em', 
                       fontWeight: 600,
                       lineHeight: 1.1,
                       marginLeft: '0.05em',
-                      paddingTop: '0.08em'
+                      paddingTop: '0.22em'
                     }}
                   >
                     st
@@ -222,7 +222,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
             <div className="absolute top-1/2 left-1/2 md:left-auto md:right-12 -translate-x-1/2 md:translate-x-0 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-tr from-green-100/35 to-indigo-100/35 blur-3xl -z-10" />
             
             {/* Image Wrapper with Bottom White Fade Overlay & Founder Tag */}
-            <div className="relative flex justify-center items-end max-w-[450px] md:max-w-[540px] lg:max-w-[620px] w-full overflow-hidden">
+            <div className="relative flex justify-center items-end max-w-[450px] md:max-w-[540px] lg:max-w-[620px] w-full overflow-hidden -translate-y-8 md:-translate-y-14">
               <img 
                 src="/platform_hero.png" 
                 alt="AI Co-Worker Platform Hero" 
