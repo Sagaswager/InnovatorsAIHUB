@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/WhatsAppautomaton",
+      "destination": "https://wa.innovatorsaihub.com/WhatsAppautomaton"
+    },
+    {
+      "source": "/WhatsAppautomaton/:path*",
+      "destination": "https://wa.innovatorsaihub.com/WhatsAppautomaton/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

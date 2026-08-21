@@ -99,6 +99,15 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
             >
               Linkedin AI Agent
             </a>
+            <a 
+              id="header-whatsapp-automation-link"
+              href="/WhatsAppautomaton"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors"
+            >
+              WhatsApp Automation
+            </a>
           </nav>
 
           {/* Header Actions (Right) */}
@@ -230,6 +239,22 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
                   >
                     <span className="text-2xl md:text-3xl font-light tracking-wide text-zinc-300 group-hover:text-white">
                       Linkedin AI Agent
+                    </span>
+                    <ExternalLink size={18} className="text-white/40 group-hover:text-white group-hover:scale-110 transition-all" />
+                  </motion.a>
+
+                  {/* External Link: WhatsApp Automation */}
+                  <motion.a
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (navItems.length + 1) * 0.05 }}
+                    href="/WhatsAppautomaton"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between py-2 text-left outline-none border-b border-white/5 pb-3"
+                  >
+                    <span className="text-2xl md:text-3xl font-light tracking-wide text-zinc-300 group-hover:text-white">
+                      WhatsApp Automation
                     </span>
                     <ExternalLink size={18} className="text-white/40 group-hover:text-white group-hover:scale-110 transition-all" />
                   </motion.a>
