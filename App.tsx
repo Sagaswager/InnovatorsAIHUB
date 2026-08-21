@@ -18,7 +18,7 @@ import Platform from './Sections/Platform';
 
 const App: React.FC = () => {
   const [isDarkMode] = useState(true);
-  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform'>('platform');
   const [selectedAgents, setSelectedAgents] = useState<string[]>([]);
   const [customDescriptions, setCustomDescriptions] = useState<Record<string, string>>({});
   const [isCustomModalOpen, setIsCustomModalOpen] = useState(false);
@@ -48,7 +48,7 @@ const App: React.FC = () => {
 
   const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform') => {
     setCurrentPage(page);
-    const path = page === 'home' ? '/' : `/${page}`;
+    const path = page === 'platform' ? '/' : `/${page}`;
     window.history.pushState({ page }, '', path);
     // Use setTimeout to ensure DOM is updated before scrolling
     setTimeout(() => {
@@ -58,7 +58,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handlePopState = () => {
-      const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'home';
+      const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'platform';
       if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact' || path === 'register' || path === 'platform') {
         setCurrentPage(path as any);
       }
@@ -100,7 +100,7 @@ const App: React.FC = () => {
     }
 
     document.title = title;
-    const pageUrl = `https://innovatorsaihub.com${currentPage === 'home' ? '/' : `/${currentPage}`}`;
+    const pageUrl = `https://innovatorsaihub.com${currentPage === 'platform' ? '/' : `/${currentPage}`}`;
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -321,10 +321,10 @@ const App: React.FC = () => {
             href="https://wa.me/919810875683"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full text-white bg-gradient-to-tr from-green-400 to-emerald-600 shadow-lg shadow-emerald-900/30 hover:shadow-emerald-500/50 hover:scale-110 active:scale-95 transition-all duration-300"
+            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:scale-110 active:scale-95 transition-all duration-300 pointer-events-auto bg-[#25D366]"
             aria-label="Chat on WhatsApp"
           >
-            <svg className="w-5 h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 md:w-7 md:h-7 text-white fill-current" viewBox="0 0 24 24">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-3.571c1.616.958 3.202 1.488 4.809 1.488 5.505 0 9.983-4.482 9.986-9.99.002-2.67-1.036-5.176-2.92-7.062C16.639 2.979 14.137 1.94 11.47 1.94c-5.513 0-10 4.49-10.003 10 .001 1.83.476 3.618 1.38 5.187L1.835 21.84l4.812-1.411zm11.921-7.854c-.3-.15-1.774-.875-2.046-.975-.27-.1-.466-.15-.66.15-.195.3-.755.95-.926 1.15-.17.2-.34.225-.64.075-.3-.15-1.265-.467-2.41-1.487-.89-.794-1.49-1.776-1.665-2.076-.175-.3-.019-.462.13-.611.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.66-1.59-1.002-2.41-.336-.807-.724-.697-.985-.71-.252-.012-.54-.015-.828-.015-.288 0-.756.108-1.15.54-.395.431-1.507 1.472-1.507 3.59s1.543 4.159 1.759 4.448c.216.29 3.037 4.639 7.358 6.51 1.028.444 1.83.709 2.455.908 1.032.328 1.97.281 2.712.17.828-.124 2.546-1.04 2.905-2.043.359-1.003.359-1.862.252-2.043-.108-.18-.302-.281-.602-.431z" />
             </svg>
           </a>
