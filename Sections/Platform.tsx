@@ -27,7 +27,7 @@ function doPost(e) {
 Make sure to click Deploy -> New Deployment -> Web App. Set Access to "Anyone" and paste the deployed URL into SCRIPT_URL below!
 */
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzexEyK1UI85INtS5v39Z5hnZX-yYzw1GBJD4fcZ_kZKJ0M5eIRjMBRQfaKLxq8mqB7yg/exec"; // Replace with deployed Web App URL
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx4dF7wuetgSnMA2Dw0nkwunHeZaroNaYJeP5XAAf4pmxtqZQPsNWo1tNH9nc3rprTm/exec";
 
 const aiCoWorkers = [
   {
@@ -629,6 +629,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
       const userData = {
         name,
         email,
+        mail: email,
         number,
         profession,
         companyName
@@ -699,17 +700,17 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
 
 
 
-      {/* Top Left Brand / Back navigation (Positioned closer to the corner) */}
-      <div className="absolute top-2 left-4 z-50">
+      {/* Top Left Brand / Back navigation (Aligned with the right-sided demo call button) */}
+      <div className="absolute top-6 left-8 z-50 flex items-center h-[34px]">
         <button
           onClick={() => navigateTo?.('home')}
           className="flex items-center group focus:outline-none"
         >
           <img
-            src="/logo.png"
+            src="/new-logo.png"
             alt="Innovators AI HUB Logo"
             style={{ filter: 'brightness(0)' }}
-            className="h-20 md:h-28 w-auto object-contain transition-all duration-300 group-hover:opacity-80"
+            className="h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:opacity-80"
           />
         </button>
       </div>
@@ -1016,15 +1017,15 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 className="w-full h-auto object-contain translate-y-[5%] scale-[1.05] mix-blend-multiply"
               />
 
-              {/* Floating Text: Trust a man, First */}
+              {/* Floating Text: Trust the Innovator, First */}
               <a 
                 href="https://www.linkedin.com/in/sagarmasand1/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-zinc-200 shadow-xl transform rotate-[-2deg] hover:scale-105 transition-transform duration-300 pointer-events-auto cursor-pointer"
+                className="absolute top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-md px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-zinc-200 shadow-xl transform rotate-[-2deg] hover:scale-105 transition-transform duration-300 pointer-events-auto cursor-pointer"
               >
-                <span className="text-sm md:text-base font-bold text-zinc-800 tracking-tight" style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
-                  Trust a man, First
+                <span className="text-xs md:text-sm font-bold text-zinc-800 tracking-tight whitespace-nowrap" style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                  Trust the Innovator, First
                 </span>
               </a>
 

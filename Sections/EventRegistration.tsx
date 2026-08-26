@@ -34,7 +34,7 @@ interface EventRegistrationProps {
 }
 
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbzbfealrHual7OTQ2wLokW8Sn1FVzfMVWAH108KiUjJvAKBlPVRxTuiACgKWtBQZH7GiA/exec';
+  'https://script.google.com/macros/s/AKfycbx4dF7wuetgSnMA2Dw0nkwunHeZaroNaYJeP5XAAf4pmxtqZQPsNWo1tNH9nc3rprTm/exec';
 
 const countryCodes = [
   { code: '+91', name: 'IN (+91)' },
@@ -162,14 +162,11 @@ const EventRegistration: React.FC<EventRegistrationProps> = () => {
     setRegisteredUser(userData);
 
     const payload = {
-      fullName: formData.name,
-      email: formData.email,
-      contactNumber: fullPhoneNumber,
-      subject: 'AI for Business (Form Submitted - Pending Payment)',
-      location: formData.city,
-      message: `Company: ${formData.company} | Designation: ${formData.designation
-        } | Price: ₹899 | WhatsApp Updates: ${formData.whatsappConsent ? 'Yes' : 'No'
-        }`,
+      name: formData.name,
+      mail: formData.email,
+      number: fullPhoneNumber,
+      profession: formData.designation,
+      companyName: formData.company,
     };
 
     try {
