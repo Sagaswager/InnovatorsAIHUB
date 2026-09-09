@@ -15,10 +15,14 @@ import CustomAgentModal from './Sections/CustomAgentModal';
 import CustomAgentBanner from './Sections/CustomAgentBanner';
 import EventRegistration from './Sections/EventRegistration';
 import Platform from './Sections/Platform';
+import JoinTeam from './Sections/JoinTeam';
+import AdminDashboard from './Sections/AdminDashboard';
 
 const App: React.FC = () => {
   const [isDarkMode] = useState(true);
-  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform'>('platform');
+  const [currentPage, setCurrentPage] = useState<'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform' | 'join' | 'admin'>('platform');
+
+
   const [selectedAgents, setSelectedAgents] = useState<string[]>([]);
   const [customDescriptions, setCustomDescriptions] = useState<Record<string, string>>({});
   const [isCustomModalOpen, setIsCustomModalOpen] = useState(false);
@@ -46,7 +50,7 @@ const App: React.FC = () => {
     }
   };
 
-  const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform') => {
+  const navigateTo = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform' | 'join' | 'admin') => {
     setCurrentPage(page);
     const path = page === 'platform' ? '/' : `/${page}`;
     window.history.pushState({ page }, '', path);
@@ -59,7 +63,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/^\/+|\/+$/g, '') || 'platform';
-      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact' || path === 'register' || path === 'platform') {
+      if (path === 'home' || path === 'portfolio' || path === 'services' || path === 'contact' || path === 'register' || path === 'platform' || path === 'join' || path === 'admin') {
         setCurrentPage(path as any);
       }
     };
@@ -96,6 +100,14 @@ const App: React.FC = () => {
       case 'register':
         title = 'AI for Business Event Registration | Innovators AI HUB';
         description = 'Register for the AI for Business event at Ofis Square, Noida. Meet Founders using AI for 10X Growth, AI Agents workshops, and premium networking.';
+        break;
+      case 'join':
+        title = 'Join Our Team | Innovators AI HUB';
+        description = 'Apply for internship and join the Innovators AI HUB team.';
+        break;
+      case 'admin':
+        title = 'Admin Dashboard | Innovators AI HUB';
+        description = 'Admin internal dashboard.';
         break;
     }
 
@@ -288,10 +300,34 @@ const App: React.FC = () => {
               <EventRegistration isDarkMode={isDarkMode} />
             </motion.div>
           )}
+
+          {currentPage === 'join' && (
+            <motion.div
+              key="join-page"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.02 }}
+              transition={{ duration: 0.5 }}
+            >
+              <JoinTeam isDarkMode={isDarkMode} />
+            </motion.div>
+          )}
+
+          {currentPage === 'admin' && (
+            <motion.div
+              key="admin-page"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.02 }}
+              transition={{ duration: 0.5 }}
+            >
+              <AdminDashboard isDarkMode={isDarkMode} />
+            </motion.div>
+          )}
         </AnimatePresence>
       </main>
       {currentPage !== 'platform' && (
-        <Footer isDarkMode={isDarkMode} currentPage={currentPage as any} navigateTo={navigateTo} />
+        <Footer isDarkMode={isDarkMode} currentPage={currentPage as any} navigateTo={navigateTo as any} />
       )}
 
       {/* Floating Chat/Social Buttons */}

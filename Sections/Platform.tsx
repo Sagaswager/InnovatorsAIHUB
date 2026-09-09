@@ -589,6 +589,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
   const [modalMode, setModalMode] = useState<'register' | 'login'>('register');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const [pendingAction, setPendingAction] = useState<string | null>(null);
 
   // Selected agent for custom details page
   const [selectedAgent, setSelectedAgent] = useState<any | null>(null);
@@ -667,7 +668,13 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
         setProfession('');
         setCompanyName('');
         setIsModalOpen(false);
-        alert(`Account created successfully! Welcome, ${name}!`);
+        
+        if (pendingAction === 'join') {
+          navigateTo?.('join');
+          setPendingAction(null);
+        } else {
+          alert(`Account created successfully! Welcome, ${name}!`);
+        }
 
       } catch (err) {
         console.error("Submission failed:", err);
@@ -687,7 +694,13 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
         setCurrentUser({ name: foundUser.name, email: foundUser.email });
         setEmail('');
         setIsModalOpen(false);
-        alert(`Welcome back, ${foundUser.name}!`);
+        
+        if (pendingAction === 'join') {
+          navigateTo?.('join');
+          setPendingAction(null);
+        } else {
+          alert(`Welcome back, ${foundUser.name}!`);
+        }
       } else {
         setSubmitError('Email not found. Click "Get Started" to register this email first!');
       }
@@ -701,7 +714,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
 
 
       {/* Top Left Brand / Back navigation (Aligned with the right-sided demo call button) */}
-      <div className="absolute top-6 left-8 z-50 flex items-center h-[34px]">
+      <div className="absolute top-4 md:top-6 left-4 md:left-8 z-50 flex items-center h-[34px]">
         <button
           onClick={() => navigateTo?.('home')}
           className="flex items-center group focus:outline-none"
@@ -716,7 +729,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
       </div>
 
       {/* Top Right Action Group */}
-      <div className="absolute top-6 right-8 z-50 flex items-center gap-4">
+      <div className="absolute top-4 md:top-6 right-4 md:right-8 z-50 flex flex-wrap md:flex-nowrap justify-end items-center gap-2 md:gap-4 w-[65vw] md:w-auto">
 
         {/* ₹2,000 Credits Button */}
         <div className="relative">
@@ -790,6 +803,23 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
             )}
           </AnimatePresence>
         </div>
+
+        {/* Join Team Button */}
+        <button
+          onClick={() => {
+            if (currentUser) {
+              navigateTo?.('join');
+            } else {
+              setPendingAction('join');
+              setModalMode('login');
+              setIsModalOpen(true);
+            }
+          }}
+          className="bg-white text-zinc-950 hover:bg-zinc-50 border border-zinc-200 rounded-full px-5 py-2 text-xs font-bold tracking-wide hover:scale-105 active:scale-95 transition-all duration-200 inline-flex items-center gap-2 outline-none shadow-sm cursor-pointer"
+        >
+          <UserPlus size={13} className="text-zinc-600" />
+          <span>Join Team</span>
+        </button>
 
         {/* Book Demo Button (Black with zoom-in scale effect) */}
         <a
@@ -891,7 +921,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
       </div>
 
       {/* Main Hero Content Area */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-2 md:pt-4 pb-0 flex flex-col md:flex-row items-center gap-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-36 md:pt-4 pb-0 flex flex-col md:flex-row items-center gap-12 relative z-10">
 
         {/* Left Side: Creative Typography & Details */}
         <div className="flex-1 text-left space-y-8 max-w-2xl">
@@ -1022,7 +1052,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 href="https://www.linkedin.com/in/sagarmasand1/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-md px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-zinc-200 shadow-xl transform rotate-[-2deg] hover:scale-105 transition-transform duration-300 pointer-events-auto cursor-pointer"
+                className="absolute top-[52%] md:top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-md px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-zinc-200 shadow-xl transform rotate-[-2deg] hover:scale-105 transition-transform duration-300 pointer-events-auto cursor-pointer"
               >
                 <span className="text-xs md:text-sm font-bold text-zinc-800 tracking-tight whitespace-nowrap" style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
                   Trust the Innovator, First
@@ -1034,7 +1064,7 @@ const Platform: React.FC<PlatformProps> = ({ navigateTo }) => {
                 href="https://www.linkedin.com/in/sagarmasand1/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-[69%] left-[3%] md:left-[6%] -translate-y-1/2 z-20 flex items-center gap-3 bg-white/95 hover:bg-white backdrop-blur-md p-1 pr-4 rounded-2xl border border-zinc-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:scale-[1.03] transition-all duration-200 pointer-events-auto cursor-pointer"
+                className="absolute top-[75%] md:top-[69%] left-[0%] md:left-[6%] -translate-y-1/2 z-20 flex items-center gap-3 bg-white/95 hover:bg-white backdrop-blur-md p-1 pr-4 rounded-2xl border border-zinc-200 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_18px_rgba(0,0,0,0.08)] hover:scale-[1.03] transition-all duration-200 pointer-events-auto cursor-pointer"
                 style={{ fontFamily: '"Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
               >
                 {/* Real LinkedIn logo image */}

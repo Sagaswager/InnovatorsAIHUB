@@ -6,8 +6,8 @@ import { trackEvent } from '../analytics';
 
 interface HeaderProps {
   isDarkMode: boolean;
-  currentPage: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform';
-  navigateTo: (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform') => void;
+  currentPage: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform' | 'join';
+  navigateTo: (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform' | 'join') => void;
   selectedAgents?: string[];
 }
 
@@ -37,15 +37,16 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, currentPage, navigateTo, se
     ['24px 0px', '16px 0px']
   );
 
-  const navItems: { label: string; page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform'; type: 'internal' }[] = [
+  const navItems: { label: string; page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform' | 'join'; type: 'internal' }[] = [
     { label: 'HUB', page: 'home', type: 'internal' },
     { label: 'Platform', page: 'platform', type: 'internal' },
     { label: 'Rent AI Co-worker', page: 'services', type: 'internal' },
     { label: 'Event', page: 'register', type: 'internal' },
-    { label: 'Contact', page: 'contact', type: 'internal' }
+    { label: 'Contact', page: 'contact', type: 'internal' },
+    { label: 'Join Team', page: 'join', type: 'internal' }
   ];
 
-  const handleLinkClick = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform') => {
+  const handleLinkClick = (page: 'home' | 'portfolio' | 'services' | 'contact' | 'register' | 'platform' | 'join') => {
     navigateTo(page);
     setIsMenuOpen(false);
   };
